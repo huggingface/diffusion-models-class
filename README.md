@@ -1,26 +1,26 @@
 # Hugging Face Diffusion Models Course
 
 In this free course, you will:
-- Learn the theory behind diffusion models
-- Train your own diffusion models from scratch
-- Fine-tune existing diffusion models on new datasets
-- Explore conditional generation and guidance
-- Dig into Stable Diffusion
-- Create your own custom diffusion model pipelines
+- 👩‍🎓 Study the theory behind diffusion models
+- 🧨 Learn how to generate images and audio with the popular 🤗 Diffusers library
+- 🏋️‍♂️ Train your own diffusion models from scratch
+- 📻 Fine-tune existing diffusion models on new datasets
+- 🗺 Explore conditional generation and guidance
+- 🧑‍🔬 Create your own custom diffusion model pipelines
 
-Signup link: TODO
 
-Discord link: TODO
+Register via the **[signup form](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162)** and then join us on **[Discord](https://discord.gg/aYka4Yhff9)** to get the conversations started.
 
 ## Syllabus
 
 | 📆 Publishing date  | 📘 Unit           | 👩‍💻 Hands-on |
 |---------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| TBA  | An Introduction to Diffusion Models| Training a Diffusion Model from Scratch and Exploring the Key Components |
+| TBA  | An Introduction to Diffusion Models| Introduction to Diffusers and Diffusion Models From Scratch |
 | TBA  | Fine-Tuning and Guidance | Fine-Tuning a Diffusion Model on New Data and Adding Guidance |
 | TBA  | Stable Diffusion Intro | Exploring a Powerful Text-Conditioned Latent Diffusion Model |
 | TBA  | Stable Diffusion Deep Dive | Fine-Tuning, Sampling Tricks and Custom Pipelines |
 
+More information coming soon!
 
 
 ## Prerequisites
@@ -47,6 +47,6 @@ You can create one here 👉 [https://huggingface.co/join](https://huggingface.c
 
 **What’s the format of the class?**
 
-The course currently consists of at least **4 Units.** More will be added as time goes on, on topics like diffusion for audio. 
+The course will consist of at least **4 Units.** More will be added as time goes on, on topics like diffusion for audio. 
 
-Each unit consists of some theory and background and one or more hands-on notebooks. Some also contain suggested projects and we'll have a competition for the best pipeline/demo (more details TDB). 
+Each unit consists of some theory and background alongisde one or more hands-on notebooks. Some units will also contain suggested projects and we'll have competitions and swag for the best pipelines and demos (more details TDB).
