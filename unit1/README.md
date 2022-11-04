@@ -23,5 +23,16 @@ if you're interested seeing a minimal from-scratch implementation and exploring 
  
  ## Additional Resources
  
- TODO
+ 
+ [The Annotated Diffusion Model](https://huggingface.co/blog/annotated-diffusion) is a very in-depth walk-through of the code and theory behind DDPMs with 
+ maths and code showing all the different components. It also links to a number of papers for further reading.
+ 
+ HuggingFace documentation on [Unconditional Image-Generation
+](https://huggingface.co/docs/diffusers/training/unconditional_training) for some examples of how to train diffusion models using the official training example script, including code showing how to create your own dataset. 
+
+AI Coffee Break video on Diffusion Models: https://www.youtube.com/watch?v=344w5h24-h8
+
+Yannic Kilcher Video on DDPMs: https://www.youtube.com/watch?v=W-O7AZNzbzQ
+ 
+ TODO add more and polish
 
