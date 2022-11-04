@@ -8,7 +8,7 @@ models work and how to train your own using the diffusers library.
 Here are the steps for this unit:
 
 - Make sure you've [signed up for this course](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162) so that you can be notified when new units are released
-- Read through the introductory material here and any linked resources that sound interesting
+- Read through the introductory material below and any linked resources that sound interesting
 - Check out the [Introduction to Diffusers](#TODO) notebook to put theory into practice with the diffusers library
 - Train and share your own diffusion model using the notebook or the [accompanying training script](#TODO)
 - (Optional) Dive deeper with the [Diffusion Models from Scratch](https://github.com/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_diffusion_models_from_scratch.ipynb) notebook 
@@ -24,3 +24,4 @@ if you're interested seeing a minimal from-scratch implementation and exploring 
  ## Additional Resources
  
  TODO
+
