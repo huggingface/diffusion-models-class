@@ -15,7 +15,7 @@ Register via the **[signup form](https://huggingface.us17.list-manage.com/subscr
 
 | 📆 Publishing date  | 📘 Unit           | 👩‍💻 Hands-on |
 |---------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| TBA  | An Introduction to Diffusion Models| Introduction to Diffusers and Diffusion Models From Scratch |
+| November 28, 2022  | An Introduction to Diffusion Models| Introduction to Diffusers and Diffusion Models From Scratch |
 | TBA  | Fine-Tuning and Guidance | Fine-Tuning a Diffusion Model on New Data and Adding Guidance |
 | TBA  | Stable Diffusion Intro | Exploring a Powerful Text-Conditioned Latent Diffusion Model |
 | TBA  | Stable Diffusion Deep Dive | Fine-Tuning, Sampling Tricks and Custom Pipelines |
