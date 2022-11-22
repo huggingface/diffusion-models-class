@@ -10,7 +10,7 @@ Here are the steps for this unit:
 - Make sure you've [signed up for this course](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162) so that you can be notified when new material is released
 - Read through the introductory material below as well as any of the additional resources that sound interesting
 - Check out the [Introduction to Diffusers](#TODO) notebook to put theory into practice with the diffusers library
-- Train and share your own diffusion model using the notebook or the [accompanying training script](#TODO)
+- Train and share your own diffusion model using the notebook or the accompanying training script
 - (Optional) Dive deeper with the [Diffusion Models from Scratch](https://github.com/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_diffusion_models_from_scratch.ipynb) notebook 
 ([colab link](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_diffusion_models_from_scratch.ipynb))
 if you're interested seeing a minimal from-scratch implementation and exploring the different design decisions involved
@@ -45,18 +45,16 @@ We will show each of these steps in detail in the hands-on notebooks here in uni
 
 At this point, you know enough to get started with the accompanying notebooks! The two notebooks here come at the same idea in different ways. 
 
-In [Introduction to Diffusers](#TODO), we show the different steps described above using building blocks from the diffusers library. You'll quickly see how to create, train and sample your own diffusion models on whatever data you choose. By the end of the notebook, you'll be able to read and modify the [example training script](#TODO) to train diffusion models and share them with the world! This notebook also introduces the main exercise associated with this unit, where we will collectively attempt to figure out good 'training recipes' for diffusion models at different scales - see the next section for more info.
+In [Introduction to Diffusers](https://github.com/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_introduction_to_diffusers.ipynb) ([colab link](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_introduction_to_diffusers.ipynb)), we show the different steps described above using building blocks from the diffusers library. You'll quickly see how to create, train and sample your own diffusion models on whatever data you choose. By the end of the notebook, you'll be able to read and modify the [example training script](#TODO) to train diffusion models and share them with the world! This notebook also introduces the main exercise associated with this unit, where we will collectively attempt to figure out good 'training recipes' for diffusion models at different scales - see the next section for more info.
 
 In [Diffusion Models from Scratch](https://github.com/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_diffusion_models_from_scratch.ipynb) 
 ([colab link](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_diffusion_models_from_scratch.ipynb)) we show those same steps (adding noise to data, creating a model, training and sampling) but implemented from scratch in PyTorch as simply as possible. Then we compare this 'toy example' with the diffusers version, noting how the two differ and where improvements have been made. The goal here is to gain familiarity with the different components and the design decisions that go into them, so that when you look at a new implementation you can quickly identify the key ideas.
 
 ## Project Time
 
-Now that you've got the basics down, have a go at training one or more diffusion models! As mentioned in [the notebook](#TODO), there aren't yet great references or rules of thumb for choosing model and training parameters when training small diffusion models. Experiment with different settings, discuss with the comminity and see if you can find a great strategy! We'll have compute credits available for experiments, and prizes for the best models and insights (details TBD). 
+Now that you've got the basics down, have a go at training one or more diffusion models! Some suggestions are included at the end of the [Introduction to Diffusers](https://github.com/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_introduction_to_diffusers.ipynb) notebook. Make sure to share your results, training recipes and findings with the community so that we can collectively figure out the best ways to train these models.
 
-## Additional Resources
-
-TODO
+## Some Additional Resources
  
 [The Annotated Diffusion Model](https://huggingface.co/blog/annotated-diffusion) is a very in-depth walk-through of the code and theory behind DDPMs with 
  maths and code showing all the different components. It also links to a number of papers for further reading.
@@ -67,6 +65,5 @@ HuggingFace documentation on [Unconditional Image-Generation
 AI Coffee Break video on Diffusion Models: https://www.youtube.com/watch?v=344w5h24-h8
 
 Yannic Kilcher Video on DDPMs: https://www.youtube.com/watch?v=W-O7AZNzbzQ
- 
- TODO add more and polish
 
+Found more great resources? Let us know and we'll add them to this list.
