@@ -8,6 +8,12 @@ In this free course, you will:
 - 🗺 Explore conditional generation and guidance
 - 🧑‍🔬 Create your own custom diffusion model pipelines
 
+[![License](https://img.shields.io/static/v1?label=License&message=Apache&color=<Yellow>)](https://github.com/huggingface/diffusion-models-class/blob/main/LICENSE) &nbsp;
+[![GitHub forks](https://img.shields.io/github/forks/huggingface/diffusion-models-class.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/dhakalnirajan/diffusion-models-class) &nbsp;
+
+
+[![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-red?style=flat-square&logo=Jupyter)](https://jupyter.org/try) &nbsp;
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat-square&logo=PyTorch&logoColor=white)
 
 Register via the **[signup form](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162)** and then join us on **[Discord](https://discord.gg/aYka4Yhff9)** to get the conversations started.
 
