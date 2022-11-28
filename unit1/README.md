@@ -51,7 +51,7 @@ In [Diffusion Models from Scratch](https://github.com/huggingface/diffusion-mode
 
 ## Project Time
 
-Now that you've got the basics down, have a go at training one or more diffusion models! Some suggestions are included at the end of the [Introduction to Diffusers](https://github.com/huggingface/diffusion-models-class/blob/unit1/unit1/hfdmc_unit1_introduction_to_diffusers.ipynb) notebook. Make sure to share your results, training recipes and findings with the community so that we can collectively figure out the best ways to train these models.
+Now that you've got the basics down, have a go at training one or more diffusion models! Some suggestions are included at the end of the [Introduction to Diffusers](https://github.com/huggingface/diffusion-models-class/blob/unit1/unit1/01_introduction_to_diffusers.ipynb) notebook. Make sure to share your results, training recipes and findings with the community so that we can collectively figure out the best ways to train these models.
 
 ## Some Additional Resources
  
