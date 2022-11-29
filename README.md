@@ -9,7 +9,7 @@ In this free course, you will:
 - 🧑‍🔬 Create your own custom diffusion model pipelines
 
 
-Register via the **[signup form](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162)** and then join us on **[Discord](https://discord.gg/aYka4Yhff9)** to get the conversations started.
+Register via the **[signup form](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162)** and then join us on **[Discord](https://discord.gg/aYka4Yhff9)** to get the conversations started. Instructions on how to join specific categories/channels **[are here.](https://discord.com/channels/879548962464493619/1014509271255367701)**
 
 ## Syllabus
 
