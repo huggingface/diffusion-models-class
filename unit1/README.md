@@ -18,7 +18,7 @@ Here are the steps for this unit:
  
 ## What Are Diffusion Models?
 
-Diffusion models are a relatively recent addition to a group of algorithms known as 'generative models'. The goal of generative modelling is to learn to **generate** data, such as images or audio, given a number of training examples. A good generative model will create a **diverse** set of outputs that resemble the training data without being exact copies. How do diffusion models achieve this? Let's focus on the image generation case for illsutrative purposes.
+Diffusion models are a relatively recent addition to a group of algorithms known as 'generative models'. The goal of generative modelling is to learn to **generate** data, such as images or audio, given a number of training examples. A good generative model will create a **diverse** set of outputs that resemble the training data without being exact copies. How do diffusion models achieve this? Let's focus on the image generation case for illustrative purposes.
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/10695622/174349667-04e9e485-793b-429a-affe-096e8199ad5b.png" width="800"/>
