@@ -16,13 +16,15 @@ Here are the steps for this unit:
  
 ## Fine-Tuning
 
-As you may have seen in Unit 1, training diffusion models from scratch can be time-consuming! Especially as we push to higher resolutions, the time and data required to train a model from scratch can become impractical. Fortunately, there is a solution: begin with a model that has already been trained! This way we start from a model that has already learnt to denoise images of some kind, and the hope is that this provides a better starting point than beginning from a randomly initialized model. Fine-tuning typically works best if the new data somewhat resembles the base model's original training data (for example, beginning with a model trained on faces is probably a good idea if you're trying to generate cartoon faces) but suprisinggly the benefits persist even if the domain is changed quite drastically.
+![Example images generated with a model trained on LSUN Bedrooms and fine-tuned for 500 steps on WikiArt](https://api.wandb.ai/files/johnowhitaker/dm_finetune/2upaa341/media/images/Sample%20generations_501_d980e7fe082aec0dfc49.png)
+
+As you may have seen in Unit 1, training diffusion models from scratch can be time-consuming! Especially as we push to higher resolutions, the time and data required to train a model from scratch can become impractical. Fortunately, there is a solution: begin with a model that has already been trained! This way we start from a model that has already learnt to denoise images of some kind, and the hope is that this provides a better starting point than beginning from a randomly initialized model. Fine-tuning typically works best if the new data somewhat resembles the base model's original training data (for example, beginning with a model trained on faces is probably a good idea if you're trying to generate cartoon faces) but suprisinggly the benefits persist even if the domain is changed quite drastically. The image above is generated from a [model trained on the LSUN Bedrooms dataset]([todo link](https://huggingface.co/google/ddpm-bedroom-256)) and fine-tuned for 500 steps on [the WikiArt dataset](https://huggingface.co/datasets/huggan/wikiart).
 
 ## Guidance
 
 Unconditional models don't give much control over what is generated. We can train a conditional model (more on that in the next section) that takes additional inputs to help steer the generation process, but what if we already have a trained unconditional model we'd like to use? Enter guidance, a process by which the model predictions at each step in the generation process are evaluated against some guidance function and modified such that the final generated image is more to our liking. 
 
-This guidance function can be almost anything, making this a powerful technique! In the notebook we build up from a simple example to one utilizing a powerful pre-trained model called CLIP that lets us guide generation based on a text description. 
+This guidance function can be almost anything, making this a powerful technique! In the notebook we build up from a simple example to one utilizing a powerful pre-trained model called CLIP which lets us guide generation based on a text description. 
 
 ## Conditioning
 
