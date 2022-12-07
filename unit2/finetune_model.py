@@ -114,7 +114,7 @@ def train(
         scheduler.step()
 
     # Save the pipeline one last time
-    image_pipe.save_pretrained(model_save_name+f'step_{step+1}')
+    image_pipe.save_pretrained(model_save_name)
     
     # Wrap up the run
     wandb.finish()
