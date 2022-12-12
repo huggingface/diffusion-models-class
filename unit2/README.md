@@ -45,7 +45,7 @@ There are a number of ways to pass in this conditioning information, such as
 
 ## Hands-On Notebook
 
-At this point, you know enough to get started with the accompanying notebooks!
+At this point, you know enough to get started with the accompanying notebooks! Open them in your platform of choice using the links above. Fine-tuning is quite computationally intensive, so if you're using Kaggle or Google Colab make sure you set the runtime type to 'GPU' for best results.
 
 The bulk of the material is in _**Fine-tuning and Guidance**_, where we explore these two topics through worked examples. The notebook shows how you can fine-tune an existing model on new data, add guidance, and share the result as a Gradio demo. There is an accompanying script ([`finetune_model.py`](TODO link)) that makes it easy to experiment with different fine-tuning settings, and [an example space](https://huggingface.co/spaces/johnowhitaker/color-guided-wikiart-diffusion) which you can use as a template for sharing your own demo on 🤗 Spaces. 
 
