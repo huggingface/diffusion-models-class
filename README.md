@@ -62,4 +62,4 @@ Members of the 🤗 community have begin translating the course! We're planning 
 
 | Language                                                                      | Authors |
 |:------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
-| [Chinese](https://github.com/darcula1993/diffusion-models-class-CN/blob/main/README_CN.md)     | [@darcula1993](https://github.com/darcula1993) |
+| [Chinese](https://github.com/darcula1993/diffusion-models-class-CN/blob/main/README_CN.md)     | [@darcula1993](https://github.com/darcula1993) [@XhrLeokk](https://github.com/XhrLeokk)|
