@@ -58,7 +58,7 @@ In _**Class-conditioned Diffusion Model Example**_ we show a brief worked exampl
 
 ## Project Time
 
-Following the examples in the _**Fine-tuning and Guidance**_ notebook, fine-tune your own model or pick an existing model and create a Gradio demo to showcase your new guidance skills. 
+Following the examples in the _**Fine-tuning and Guidance**_ notebook, fine-tune your own model or pick an existing model and create a Gradio demo to showcase your new guidance skills. Don't forget to share your demo on Discord, Twitter etc so we can admire your work!
 
 ## Some Additional Resources
 
