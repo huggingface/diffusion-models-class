@@ -21,7 +21,7 @@ Register via the **[signup form](https://huggingface.us17.list-manage.com/subscr
 | 📆 Publishing date  | 📘 Unit           | 👩‍💻 Hands-on |
 |---------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | November 28, 2022  | [An Introduction to Diffusion Models](https://github.com/huggingface/diffusion-models-class/tree/main/unit1)| Introduction to Diffusers and Diffusion Models From Scratch |
-| December 12, 2022  | Fine-Tuning and Guidance | Fine-Tuning a Diffusion Model on New Data and Adding Guidance |
+| December 12, 2022  | [Fine-Tuning and Guidance](https://github.com/huggingface/diffusion-models-class/tree/main/unit2) | Fine-Tuning a Diffusion Model on New Data and Adding Guidance |
 | TBA  | Stable Diffusion Intro | Exploring a Powerful Text-Conditioned Latent Diffusion Model |
 | TBA  | Stable Diffusion Deep Dive | Fine-Tuning, Sampling Tricks and Custom Pipelines |
 
