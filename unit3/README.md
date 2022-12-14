@@ -23,9 +23,14 @@ Stable Diffusion is ...
  
 ## Latent Diffusion
 
+![latent diffusion diagram](https://github.com/CompVis/latent-diffusion/raw/main/assets/modelfigure.png)
+_Diagram from the [Latent Diffusion paper](http://arxiv.org/abs/2112.10752)
+
 Explain latent diffusion
 
 ## Text Conditioning
+
+![conditioning diagram](sd_unet_color.png)
 
 Explain text conditioning
 
