@@ -17,26 +17,43 @@ Here are the steps for this unit:
 
 ## Introduction
 
-TODO cool images here
+![SD example images](sd_demo_images.jpg)<br>
+_Example images generated using Stable Diffusion_
 
-Stable Diffusion is ...
+Stable Diffusion is a powerful text-conditioned latent diffusion model. Don't worry, we'll explain those words shortly! Its ability to create amazing images from text descriptions has made it an internet sensation. In this unit we're going to explore how SD works and see what other tricks it can do.
  
 ## Latent Diffusion
 
-![latent diffusion diagram](https://github.com/CompVis/latent-diffusion/raw/main/assets/modelfigure.png)
-_Diagram from the [Latent Diffusion paper](http://arxiv.org/abs/2112.10752)
+As image size grows, so does the computational power required to work with those images. This is especially pronounced in an operation called self-attention, where the amount of operations grows quadratically with the number of inputs. A 128px square image has 4x as many pixels as a 64px square image, and so requires 16x (i.e. 4<sup>2</sup>) the memory and compute in a self-attention layer. This is a problem for anyone who'd like to generate high-resolution images!
 
-Explain latent diffusion
+![latent diffusion diagram](https://github.com/CompVis/latent-diffusion/raw/main/assets/modelfigure.png)<br>
+_Diagram from the [Latent Diffusion paper](http://arxiv.org/abs/2112.10752)_
+
+Latent diffusion helps to mitigate this issue by using a separate model called a Variational Auto-Encoder (VAE) to **compress** images to a smaller spatial dimension. The rationale behind this is that images tend to contain a large amount of reduntat information - given enough training data, a VAE can hopefully learn to produce a much smaller representation of an input image and then reconstruct the image based on this small **latent** representation with a high degree of fidelity. The VAE using in SD takes in 3-channel images and produces a 4-channel latent representation with a reduction factor of 8 for each spatial dimension. That is, a 512px square input image will be compressed down to a 4x64x64 latent.
+
+By applying the diffusion process on these **latent representations** rather than on full-resolution images, we can get many of the benefits that would come from using smaller images (lower memory usage, fewer layers needed in the unet, faster generation times...) and still decode the result back to a high-resolution image once we're ready to view the final result. This innovation dramatically lowers the cost to train and run these models. 
 
 ## Text Conditioning
 
+In Unit 2 we showed how feeding additional information to the unet allows us to have some additional control over the types of images generated. We call this conditioning. Given a noisy version of an image, the model is tasked with predicting the denoised version **based on additional clues** such as a class label or, in the case of Stable Diffusion, a text description of the image. At inference time, we can feed in the description of an image we'd like to see and some pure noise as a starting point, and the model do its best to 'denoise' the random input into something that matches the caption. 
+
+![text encoder diagram](text_encoder_noborder.png)<br>
+_Diagram showing the text encoding process which transforms the input prompt into a set of text embeddings (the encoder_hidden_states) which can then be fed in as conditioning to the unet._
+
+For this to work, we need to create a numeric representation of the text that captures relevant information about what it describes. To do this, SD leverages a pre-trained transformer model based on something called CLIP. CLIP's text encoder was designed to process image captions into a form that could be used to compare images and text, and so it is well suited to the task of creating useful representations from image descriptions. An input prompt is first tokenized (based on a large vocabulary where each word or sub-word is assigned a specific token) and then fed through the CLIP text encoder, producing a 768-dimensional (in the case of SD 1.X) or 1024-dimensional (SD 2.X) vector for each token. To keep things consistent, prompts are always padded/truncated to be 77 tokens long, and so the final representation which we use as conditioning is a tensor of shape 77x1024 per prompt.
+
 ![conditioning diagram](sd_unet_color.png)
 
-Explain text conditioning
+
+OK, so how do we actually feed this conditioning information into the unet for it to use as it makes predictions? The answer is something called cross-attention. Scattered throughout the unet are cross-attention layers. Each spatial location in the unet can 'attend' to different tokens in the text conditioning, bringing in relevant information from the prompt. The diagram above shows how this text conditioning (as well as a timestep-based conditioning) is fed in at different points. As you can see, at every level the unet has ample opportunity to make use of this conditioning!
 
 ## Classifier-free Guidance
 
 Explain CFG
+
+## Super-Resolution
+
+Include?
 
 
 ## Hands-On Notebook
