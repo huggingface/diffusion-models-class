@@ -44,16 +44,24 @@ For this to work, we need to create a numeric representation of the text that ca
 
 ![conditioning diagram](sd_unet_color.png)
 
-
 OK, so how do we actually feed this conditioning information into the unet for it to use as it makes predictions? The answer is something called cross-attention. Scattered throughout the unet are cross-attention layers. Each spatial location in the unet can 'attend' to different tokens in the text conditioning, bringing in relevant information from the prompt. The diagram above shows how this text conditioning (as well as a timestep-based conditioning) is fed in at different points. As you can see, at every level the unet has ample opportunity to make use of this conditioning!
 
 ## Classifier-free Guidance
 
-Explain CFG
+It turns out that even with all of the effort put into making the text conditioning as useful as possible, the model still tends to default to relying mostly on the noisy input image when making its predictions rather than the prompt. In a way, this makes sense - many captions only loosely relate to their associated images and so the model learns not to rely too heavily on the descriptions! However, this is undesirable when it comes time to generate new images - if the model doesn't follow the prompt then we may get wonderful images out that don't relate to our description at all.
 
-## Super-Resolution
+TODO CFG grid
 
-Include?
+To fix this, we use a trick called Classifier-Free Guidance (CGF). During training, text conditioning is sometimes kept blank, forcing the model to learn to denoise images with no text information whatsoever (unconditional generation). Then at inference time, we make two separate predictions: one with the text prompt as conditioning and one without. We can then use the the difference between these two predictions to create a final combined prediction that pushed **even further** in the direction indicated by the text-conditioned prediction according to some scaling factor (the guidance scale), hopefully resulting in an image that better matches the prompt. The image above shows the outputs for a prompt at different guidance scales - as you can see, higher values result in images that better match the description.
+
+## Other Types of Conditioning: Super-Resolution, Inpainting and Depth-to-Image
+
+It is possible to create versions of Stable Diffusion that take in additional kinds of conditioning. For example, the [Depth-to-Image model](https://huggingface.co/stabilityai/stable-diffusion-2-depth) has extra input chanels that take in depth information about the image being denoised, and at inference time we can feed in the depth map of a target image (estimated using a separate model) to hopefully generate an image with similar overall structure. 
+
+![depth to image example](https://huggingface.co/stabilityai/stable-diffusion-2-depth/resolve/main/depth2image.png)<br>
+_Depth conditioned SD is able to generate different images with the same overall structure (example from StabilityAI)_
+
+In a similar manner, we can feed in a low-resolution image as the conditioning and have the model generate the high-resolution version ([as used by the Stable Diffusion Upscaler](https://huggingface.co/stabilityai/stable-diffusion-x4-upscaler)). Finally, we can feed in a mask showing a region of the image to be re-generated as part of the 'in-painting' task, where the non-mask regions need to stay intact while new content is generated for the masked area. 
 
 
 ## Hands-On Notebook
@@ -76,8 +84,10 @@ Follow the instructions in [todo link dreambooth notebook] to train your own mod
 
 ## Some Additional Resources
 
-[High-Resolution Image Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2112.10752) - The paper that introduced the approach behind Stable Diffusion
+- [High-Resolution Image Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2112.10752) - The paper that introduced the approach behind Stable Diffusion
 
-[CLIP](https://openai.com/blog/clip/) - CLIP learns to connect text with images and the CLIP text encoder is used to transform a text prompt into the rich numerical representation used by SD. See also, [this article on OpenCLIP](https://wandb.ai/johnowhitaker/openclip-benchmarking/reports/Exploring-OpenCLIP--VmlldzoyOTIzNzIz) for some background on recent open-source CLIP variants (one of which is used for SD version 2).
+- [CLIP](https://openai.com/blog/clip/) - CLIP learns to connect text with images and the CLIP text encoder is used to transform a text prompt into the rich numerical representation used by SD. See also, [this article on OpenCLIP](https://wandb.ai/johnowhitaker/openclip-benchmarking/reports/Exploring-OpenCLIP--VmlldzoyOTIzNzIz) for some background on recent open-source CLIP variants (one of which is used for SD version 2).
+
+- [GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models](https://arxiv.org/abs/2112.10741) an early paper demonstrating text conditioning and CFG
 
 Found more great resources? Let us know and we'll add them to this list.
