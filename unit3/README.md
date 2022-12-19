@@ -66,8 +66,10 @@ In a similar manner, we can feed in a low-resolution image as the conditioning a
 
 ## Fine-Tuning with DreamBooth
 
-TODO
+![dreambooth diagram](https://dreambooth.github.io/DreamBooth_files/teaser_static.jpg)
+_Image from the [dreambooth project page](https://dreambooth.github.io/) based on the Imagen model_
 
+Dreambooth is a technique for fine-tuning a text-to-image model to 'teach' it a new concept, such as a specific object or style. The technique was originally developed for Google's Imagen model but was quickly adapted to [work for stable diffusion](https://huggingface.co/docs/diffusers/training/dreambooth). Results can be extremely impressive (if you've seen anyone with an AI profile piture on social media recently the odds are high it came from a dreambooth-based service) but the technique is also sensitive to the settings used, so check out our notebook and [this great investigation into the different training parameters](https://huggingface.co/blog/dreambooth) for some tips on getting it working as well as possible.
 
 ## Hands-On Notebook
 
