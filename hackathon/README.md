@@ -59,4 +59,6 @@ We will be awarding 3 prizes per theme, where **winners are determined by the mo
 
 ## Compute
 
-Google Colab will be sponsoring this event by providing Colab Pro credits to 100 participants (selected randomly). To register for these credits, fill out your details in this form.
+Google Colab will be sponsoring this event by providing fere Colab Pro credits to 100 participants (selected randomly). To register for these credits, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSeE_js5bxq_a_nFTglbZbQqjd6KNDD9r4YRg42kDFGSb5aoYQ/viewform).
+
+![](https://lh3.googleusercontent.com/-l6dUgmPOKMM/X7w3nNn3OpI/AAAAAAAALAg/74fTRiPqikMURTD_Dn4PzAVADey2_6lLwCNcBGAsYHQ/s400/colab-logo-128x128.png)
