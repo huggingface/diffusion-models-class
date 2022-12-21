@@ -60,7 +60,7 @@ To fix this, we use a trick called Classifier-Free Guidance (CGF). During traini
 It is possible to create versions of Stable Diffusion that take in additional kinds of conditioning. For example, the [Depth-to-Image model](https://huggingface.co/stabilityai/stable-diffusion-2-depth) has extra input channels that take in-depth information about the image being denoised, and at inference time we can feed in the depth map of a target image (estimated using a separate model) to hopefully generate an image with a similar overall structure. 
 
 ![depth to image example](https://huggingface.co/stabilityai/stable-diffusion-2-depth/resolve/main/depth2image.png)<br>
-Depth-conditioned_ SD is_ able to generate different images with the same overall structure (example from StabilityAI)_
+_Depth-conditioned SD is able to generate different images with the same overall structure (example from StabilityAI)_
 
 In a similar manner, we can feed in a low-resolution image as the conditioning and have the model generate the high-resolution version ([as used by the Stable Diffusion Upscaler](https://huggingface.co/stabilityai/stable-diffusion-x4-upscaler)). Finally, we can feed in a mask showing a region of the image to be re-generated as part of the 'in-painting' task, where the non-mask regions need to stay intact while new content is generated for the masked area. 
 
