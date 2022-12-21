@@ -56,6 +56,8 @@ We will be awarding 3 prizes per theme, where **winners are determined by the mo
 
 * [Hugging Face Pro subscription](https://huggingface.co/pricing) for 1 month or a $15 voucher for the [Hugging Face merch store](https://store.huggingface.co/)
 
+We will also provide a certificate of completion to all the participants that submit at least 1 DreamBooth model to the hackathon 🔥.
+
 
 ## Compute
 
