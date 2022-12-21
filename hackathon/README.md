@@ -7,7 +7,7 @@ This competition is composed of 5 _themes_, where each theme will collect models
 * **Animal 🐨:** Use this theme to generate images of your pet or favourite animal hanging out in the Acropolis, swimming, or flying in space.
 * **Science 🔬:** Use this theme to generate cool synthetic images of galaxies, proteins, or any domain of the natural and medical sciences.
 * **Food 🍔:** Use this theme to tune Stable Diffusion on your favourite dish or cuisine.
-* **Landscape 🏔:** Use this theme to generate beautiful landscapes of your faourite mountain, lake, or garden.
+* **Landscape 🏔:** Use this theme to generate beautiful landscapes of your favourite mountain, lake, or garden.
 * **Wildcard 🔥:** Use this theme to go wild and create Stable Diffusion models for any category of your choosing!
 
 We'll be **giving out prizes to the top 3 most liked models per theme**, and you're encouraged to submit as many models as you want! 
