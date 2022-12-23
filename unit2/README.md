@@ -11,6 +11,7 @@ Here are the steps for this unit:
 - Check out the _**Fine-tuning and Guidance**_ notebook to fine-tune an existing diffusion model on a new dataset using the 🤗 Diffusers library and to modify the sampling procedure using guidance
 - Follow the example in the notebook to share a Gradio demo for your custom model
 - (Optional) Check out the _**Class-conditioned Diffusion Model Example**_ notebook to see how we can add additional control to the generation process.
+- (Optional) Check out [this video](https://www.youtube.com/watch?v=mY20iKOQ2zw) for an informal run-through of the material in this unit.
 
 
 :loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
