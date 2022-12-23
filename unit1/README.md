@@ -12,6 +12,7 @@ Here are the steps for this unit:
 - Check out the _**Introduction to Diffusers**_  notebook below to put theory into practice with the 🤗 Diffusers library
 - Train and share your own diffusion model using the notebook or the linked training script
 - (Optional) Dive deeper with the _**Diffusion Models from Scratch**_ notebook if you're interested in seeing a minimal from-scratch implementation and exploring the different design decisions involved
+- (Optional) Check out [this video](https://www.youtube.com/watch?v=09o5cv6u76c) for an informal run-through the material for this unit. 
 
 
 :loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
