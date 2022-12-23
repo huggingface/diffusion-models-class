@@ -30,6 +30,7 @@ Follow the steps below to take part in this event:
 * [`stabilityai/stable-diffusion-2`](https://huggingface.co/stabilityai/stable-diffusion-2)
 * [`hakurei/waifu-diffusion`](https://huggingface.co/hakurei/waifu-diffusion)
 * [`stabilityai/stable-diffusion-2-1`](https://huggingface.co/stabilityai/stable-diffusion-2-1)
+* [`nitrosocke/elden-ring-diffusion`](https://huggingface.co/nitrosocke/elden-ring-diffusion)
 
 ## Evaluation & Leaderboard
 
