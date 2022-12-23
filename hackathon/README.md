@@ -23,6 +23,15 @@ Follow the steps below to take part in this event:
 |:--------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DreamBooth Training                              | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              |
 
+**Note 👋:** The DreamBooth notebook uses the [`CompVis/stable-diffusion-v1-4`](https://huggingface.co/CompVis/stable-diffusion-v1-4) checkpoint as the Stable Diffusion model to fine-tune. However, you are totally free to use any Stable Diffusion checkpoint that you want - you'll just have to adjust the code to load the appropriate components and the safety checker (if it exists). Some interesting models to fine-tune include:
+
+* [`runwayml/stable-diffusion-v1-5`](https://huggingface.co/runwayml/stable-diffusion-v1-5)
+* [`prompthero/openjourney`](https://huggingface.co/prompthero/openjourney)
+* [`stabilityai/stable-diffusion-2`](https://huggingface.co/stabilityai/stable-diffusion-2)
+* [`hakurei/waifu-diffusion`](https://huggingface.co/hakurei/waifu-diffusion)
+* [`stabilityai/stable-diffusion-2-1`](https://huggingface.co/stabilityai/stable-diffusion-2-1)
+* [`nitrosocke/elden-ring-diffusion`](https://huggingface.co/nitrosocke/elden-ring-diffusion)
+
 ## Evaluation & Leaderboard
 
 To be in the running for the prizes, push one or more DreamBooth models to the Hub with the `dreambooth-hackathon` tag in the model card ([example](https://huggingface.co/lewtun/ccorgi-dog/blob/main/README.md#L9)). This is created automatically by the [DreamBooth notebook](https://github.com/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb), but you'll need to add it if you're running your own scripts.
@@ -56,7 +65,7 @@ We will be awarding 3 prizes per theme, where **winners are determined by the mo
 
 * [Hugging Face Pro subscription](https://huggingface.co/pricing) for 1 month or a $15 voucher for the [Hugging Face merch store](https://store.huggingface.co/)
 
-We will also provide a certificate of completion to all the participants that submit at least 1 DreamBooth model to the hackathon 🔥.
+We will also provide a **certificate of completion** to all the participants that submit at least 1 DreamBooth model to the hackathon 🔥.
 
 
 ## Compute
@@ -64,3 +73,14 @@ We will also provide a certificate of completion to all the participants that su
 Google Colab will be sponsoring this event by providing fee Colab Pro credits to 100 participants (selected randomly). We'll be giving out the credits in January 2023, and you have until December 31 to register. To register for these credits, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSeE_js5bxq_a_nFTglbZbQqjd6KNDD9r4YRg42kDFGSb5aoYQ/viewform).
 
 ![](https://lh3.googleusercontent.com/-l6dUgmPOKMM/X7w3nNn3OpI/AAAAAAAALAg/74fTRiPqikMURTD_Dn4PzAVADey2_6lLwCNcBGAsYHQ/s400/colab-logo-128x128.png)
+
+## FAQ
+
+### What data is allowed for fine-tuning?
+
+You can use any images that belong to you or for which a permissive license allows for. If you'd like to submit a model trained on faces (e.g. as a Wilcard submission), we recommend using your own likeness. Ideally, use your own data where you can - we'd love to see your pets or favorite local landscape features, and we suspect the likes and prizes will tend to go to those who do something nice and personal 😁
+
+### Are other fine-tuning techniques like textual inversion allowed?
+
+Absolutely! Although this hackathon is focused on DreamBooth, you're welcome (and encouraged) to experiment with other fine-tuning techniques. This also means you can use whatever frameworks, code, or services that help you make delightful models for the community to enjoy 🥰
+
