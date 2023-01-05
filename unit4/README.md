@@ -25,6 +25,7 @@ Things to cover
 - Maybe a rundown of specific models (DALL-E 2, Imagen, eDiffi)
 - Video 
 - Audio
+- Moving beyond diffusion (MaskGIT/MUSE, Paella and co)
 
 ## Project Time
 
