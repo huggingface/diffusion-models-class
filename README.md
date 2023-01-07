@@ -1,4 +1,5 @@
 # Hugging Face Diffusion Models Course
+# Hugging Face 拡散モデル（Diffusion Models）コース
 
 [![License](https://img.shields.io/static/v1?label=License&message=Apache&color=<Yellow>)](https://github.com/huggingface/diffusion-models-class/blob/main/LICENSE) &nbsp;
 [![GitHub forks](https://img.shields.io/github/forks/huggingface/diffusion-models-class.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/dhakalnirajan/diffusion-models-class) &nbsp;
