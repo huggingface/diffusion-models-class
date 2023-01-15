@@ -1,6 +1,6 @@
 # Unit 4: Going Further with Diffusion Models
 
-Welcome to Unit 4 of the Hugging Face Diffusion Models Course! In this unit we will look at some of the many improvements and extensions to diffusion models appearing in the latest research. It will be less code-heavy than previous units have been, and is designed to give you a jumping off point for further research and set up for possible additional units in the future.
+Welcome to Unit 4 of the Hugging Face Diffusion Models Course! In this unit we will look at some of the many improvements and extensions to diffusion models appearing in the latest research. It will be less code-heavy than previous units have been, and is designed to give you a jumping off point for further research.
 
 ## Start this Unit :rocket:
 
@@ -12,18 +12,16 @@ Here are the steps for this unit:
 - Complete the [TODO some sort of exercise/capstone project]
 
 :loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
- 
-## Introduction
-
-By the end of Unit 3...
 
 ## Faster Sampling via Distillation
 
-Introduce the idea... The core mechanism is illustrated in this diagram from the [paper that introduced the idea](http://arxiv.org/abs/2202.00512):
+Progressive distillation is a technique for taking an existing diffusion model and using it to train a new version of the model that requires fewer steps for inference. The 'student' model is initialized from the weights of the 'teacher' model. During training, the teacher model performs two sampling steps and the student model tries to match the resulting prediction in a single step. This process can be repeated mutiple times, with the previous iteration's student model becoming the teacher for the next stage. The end result is a model that can produce decent samples in much fewer steps (typically 4 or 8) than the original teacher model. The core mechanism is illustrated in this diagram from the [paper that introduced the idea](http://arxiv.org/abs/2202.00512):
 
 ![image](https://user-images.githubusercontent.com/6575163/211016659-7dac24a5-37e2-45f9-aba8-0c573937e7fb.png)
 
-The idea of using an existing model to 'teach' a new model can be extended to create guided models where the classifier-free guidance technique is used by the teacher model and the student model must learn to produce an equivalent output in a single step based on an additional input specifying the targeted guidance scale. This further reduces the number of model evaluations required to produce high-quality samples.
+The idea of using an existing model to 'teach' a new model can be extended to create guided models where the classifier-free guidance technique is used by the teacher model and the student model must learn to produce an equivalent output in a single step based on an additional input specifying the targeted guidance scale. This further reduces the number of model evaluations required to produce high-quality samples. [This video](https://www.youtube.com/watch?v=ZXuK6IRJlnk) gives an overview of the approach. 
+
+NB: A distilled version of Stable Diffusion is due to be released fairly soon.
 
 Key papers:
 - [PROGRESSIVE DISTILLATION FOR FAST SAMPLING OF DIFFUSION MODELS](http://arxiv.org/abs/2202.00512)
@@ -31,29 +29,52 @@ Key papers:
 
 ## Training Improvements
 
+There have been a number of additional tricks developed to improve diffusion model training. In this section we've tried to capture the core ideas from recent papers. There is a constant stream of research coming out with additional improvements, so if you see a paper you feel should be added here please let us know!
+
 ![image](https://user-images.githubusercontent.com/6575163/211021220-e87ca296-cf15-4262-9359-7aeffeecbaae.png)
 _Figure 2 from the [ERNIE-ViLG 2.0 paper](http://arxiv.org/abs/2210.15257)_
 
-There have been a number of additional tricks developed to improve training. A few key ones are
-- Tuning the noise schedule, loss weighting and sampling trajectories (Karras et al)
-- Training on diverse aspect rations [TODO link patrick's talk from the launch event]
-- Cascading diffusion models, training one model at low resolution and then one or more super-res models (D2, Imagen, eDiffi)
-- Rich text embeddings (Imagen) or multiple types of conditioning (eDiffi)
-- Incorporating pre-trained image captioning and object detection models into the training process to create more informative captions and produce better performance in a process known as 'knowledge enhancement' (ERNIE-ViLG 2.0)
-- MoE training different variants of the model ('experts') for different noise levels...
+Key training improvements:
+- Tuning the noise schedule, loss weighting and sampling trajectories for more efficient training. An excellent paper exploring some of these design choices is [Elucidating the Design Space of Diffusion-Based Generative Models](http://arxiv.org/abs/2206.00364) by Karras et al.
+- Training on diverse aspect rations, as described in [this video from the course launch event](https://www.youtube.com/watch?v=g6tIUrMvOec). 
+- Cascaded diffusion models, training one model at low resolution and then one or more super-res models. Used in DALLE-2, Imagen and more for high-resolution image generation. 
+- Better conditioning, incorporating rich text embeddings ([Imagen](https://arxiv.org/abs/2205.11487) uses a large language model called T5) or multiple types of conditioning ([eDiffi](http://arxiv.org/abs/2211.01324))
+- 'Knowledge Enhancement' - incorporating pre-trained image captioning and object detection models into the training process to create more informative captions and produce better performance ([ERNIE-ViLG 2.0](http://arxiv.org/abs/2210.15257))
+- 'Mixture of Denoising Experts' (MoDE) - training different variants of the model ('experts') for different noise levels as illustrated in the image above from the [ERNIE-ViLG 2.0 paper](http://arxiv.org/abs/2210.15257).
 
 Key Papers:
 - [Elucidating the Design Space of Diffusion-Based Generative Models](http://arxiv.org/abs/2206.00364)
 - [eDiffi: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers](http://arxiv.org/abs/2211.01324)
 - [ERNIE-ViLG 2.0: Improving Text-to-Image Diffusion Model with Knowledge-Enhanced Mixture-of-Denoising-Experts](http://arxiv.org/abs/2210.15257)
-- [Imagen][TODO]
+- [Imagen - Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding](https://arxiv.org/abs/2205.11487) ([demo site](https://imagen.research.google/))
 
-## Inference Improvements
+## More Control for Generation and Editing
 
-- eDiffi paint with words,
-- Image editing with diffusion models video
-- Textual inversion, null text inversion
-- ??
+In addition to training improvements, there have been a number of innovations in the sampling and inference phase, including many approaches that can add new capabilities to existing diffusion models. 
+
+![image](https://user-images.githubusercontent.com/6575163/212529129-3de41cf4-6f70-4607-8448-e9bbe9d190cf.png)
+_Samples generated by 'paint-with-words' ([eDiffi](http://arxiv.org/abs/2211.01324))_
+
+The video ['Editing Images with Diffusion Models'](https://www.youtube.com/watch?v=zcG7tG3xS3s) gives an overview of the different methods being used to edit existing images with diffusion models. The available techniques can be split into four main categories:
+
+1) Add noise and then denoise with a new prompt. This is the idea behind the img2img pipeline, which has been modified and extended in various papers.
+- [SDEdit](https://sde-image-editing.github.io/) and [MagicMix](https://magicmix.github.io/) build on this idea
+- DDIM inversion (TODO link tutorial) uses the model to 'reverse' the sampling trajectory rather than adding random noise, giving more control
+- [Null-text Inversion](https://null-text-inversion.github.io/) enhances the performance of this kind of approach dramatically by optimizing the unconditional text embeddings used for classifier-free-guidance at each step, allowing for extremely high-quality text-based image editing.
+2) Extending the ideas in (1) but with a mask to control where the effect is applied
+- [Blended Diffusion](https://omriavrahami.com/blended-diffusion-page/) introduces the basic idea
+- This demo](https://huggingface.co/spaces/nielsr/text-based-inpainting) uses an existing segmentation model (CLIPSeg) to create the mask based on a text description
+- [DiffEdit](https://arxiv.org/abs/2210.11427) is an excellent paper that shows how the diffusion model itself can be used to generate an appropriate mask for editing the image based on text.
+- [SmartBrush: Text and Shape Guided Object Inpainting with Diffusion Model](https://arxiv.org/abs/2212.05034) fine-tunes a diffusion model for more accurate mask-guided inpainting. 
+3) Cross-attention Control: using the cross-attention mechanism in diffusion models to control the spatial location of edits for more fine-grained control.
+- [Prompt-to-Prompt Image Editing with Cross Attention Control](https://arxiv.org/abs/2208.01626) is the key paper that introducd this idea, and the technique has [since been applied to Stable Diffusion](https://wandb.ai/wandb/cross-attention-control/reports/Improving-Generative-Images-with-Instructions-Prompt-to-Prompt-Image-Editing-with-Cross-Attention-Control--VmlldzoyNjk2MDAy)
+4) Fine-tune ('overfit') on a single image and then generate with the fine-tuned model. The following papers both published variants of this idea at roughly the same time:
+- [Imagic: Text-Based Real Image Editing with Diffusion Models](https://arxiv.org/abs/2210.09276)
+- [UniTune: Text-Driven Image Editing by Fine Tuning an Image Generation Model on a Single Image
+](https://arxiv.org/abs/2210.09477)
+
+The paper [InstructPix2Pix: Learning to Follow Image Editing Instructions](https://arxiv.org/abs/2211.09800) is notable in that it used some of the image editing techniques described above to build a synthetic dataset of image pairs alongside image edit instructions (generated with GPT3.5) to train a new model capable of editing images based on natural language instructions
+
 
 ## Video
 
