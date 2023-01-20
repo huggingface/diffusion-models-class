@@ -25,7 +25,7 @@ The idea of using an existing model to 'teach' a new model can be extended to cr
 
 NB: A distilled version of Stable Diffusion is due to be released fairly soon.
 
-Key papers:
+Key references:
 - [PROGRESSIVE DISTILLATION FOR FAST SAMPLING OF DIFFUSION MODELS](http://arxiv.org/abs/2202.00512)
 - [ON DISTILLATION OF GUIDED DIFFUSION MODELS](http://arxiv.org/abs/2210.03142)
 
@@ -44,7 +44,7 @@ Key training improvements:
 - 'Knowledge Enhancement' - incorporating pre-trained image captioning and object detection models into the training process to create more informative captions and produce better performance ([ERNIE-ViLG 2.0](http://arxiv.org/abs/2210.15257))
 - 'Mixture of Denoising Experts' (MoDE) - training different variants of the model ('experts') for different noise levels as illustrated in the image above from the [ERNIE-ViLG 2.0 paper](http://arxiv.org/abs/2210.15257).
 
-Key Papers:
+Key references:
 - [Elucidating the Design Space of Diffusion-Based Generative Models](http://arxiv.org/abs/2206.00364)
 - [eDiffi: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers](http://arxiv.org/abs/2211.01324)
 - [ERNIE-ViLG 2.0: Improving Text-to-Image Diffusion Model with Knowledge-Enhanced Mixture-of-Denoising-Experts](http://arxiv.org/abs/2210.15257)
@@ -86,7 +86,7 @@ _Still frames from [sample videos generated with Imagen Video](https://imagen.re
 
 A video can be represented as a sequence of images, and the core ideas of diffusion models can be applied to these sequences. Recent work has focused on findingappropriate architectures (such as '3D UNets' which operate on entire sequences) and on working efficiently with video data. Since high-frame-rate video involves a lot more data than still images, current approaches tend to first generate low-resolution and low-frame-rate video and then apply spatial and temporal super-resolution to produce the final high-quality video outputs. 
 
-Key Papers:
+Key references:
 - [Video Diffusion Models](https://video-diffusion.github.io/)
 - [IMAGEN VIDEO: HIGH DEFINITION VIDEO GENERATION WITH DIFFUSION MODELS](https://imagen.research.google/video/paper.pdf)
 
@@ -118,7 +118,7 @@ The UNet architecture at the heart of many current diffusion models is also bein
 
 With each new paper more efficient or performant approaches are being developed, and it may be some time before we see what peak performance looks like on these kinds of iterative refinement tasks. There is much more still to explore!
 
-Key References
+Key references
 
 - [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](http://arxiv.org/abs/2208.09392)
 - [Scalable Diffusion Models with Transformers (DiT)](https://www.wpeebles.com/DiT)
