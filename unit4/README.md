@@ -9,7 +9,7 @@ Here are the steps for this unit:
 - Make sure you've [signed up for this course](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162) so that you can be notified when additional units are added to the course
 - Read through the material below for an overview of the different topics covered in this unit
 - Dive deeper into any specific topics with the linked videos and resources
-- Complete the [TODO some sort of exercise/capstone project]
+- Explore the demo notebooks and then read the 'What Next' section for some project suggestions
 
 :loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
 
@@ -18,6 +18,8 @@ Here are the steps for this unit:
 Progressive distillation is a technique for taking an existing diffusion model and using it to train a new version of the model that requires fewer steps for inference. The 'student' model is initialized from the weights of the 'teacher' model. During training, the teacher model performs two sampling steps and the student model tries to match the resulting prediction in a single step. This process can be repeated mutiple times, with the previous iteration's student model becoming the teacher for the next stage. The end result is a model that can produce decent samples in much fewer steps (typically 4 or 8) than the original teacher model. The core mechanism is illustrated in this diagram from the [paper that introduced the idea](http://arxiv.org/abs/2202.00512):
 
 ![image](https://user-images.githubusercontent.com/6575163/211016659-7dac24a5-37e2-45f9-aba8-0c573937e7fb.png)
+
+_Progressive Distillation illustrated (from the [paper](http://arxiv.org/abs/2202.00512))_
 
 The idea of using an existing model to 'teach' a new model can be extended to create guided models where the classifier-free guidance technique is used by the teacher model and the student model must learn to produce an equivalent output in a single step based on an additional input specifying the targeted guidance scale. This further reduces the number of model evaluations required to produce high-quality samples. [This video](https://www.youtube.com/watch?v=ZXuK6IRJlnk) gives an overview of the approach. 
 
@@ -91,6 +93,7 @@ Key Papers:
 ## Audio
 
 ![image](https://user-images.githubusercontent.com/6575163/213657272-a1b54017-216f-453b-9b28-97c6fef21f54.png)
+
 _A spectrogram generated with Riffusion ([image source](https://www.riffusion.com/about))_
 
 While there has been some work on generating audio directly using diffusion models (e.g. [DiffWave](https://arxiv.org/abs/2009.09761)) the most successful approach so far has been to convert the audio signal into something called a spectrogram, which effectively 'encodes' the audio as a 2D "image" which can then be used to train the kinds of diffusion models we're used to using for image generation. The resulting generated spectrograms can then be converted into audio using existing methods. This approach is behind the recently-released Riffusion, which fine-tuned Stable Diffusion to generate spectrograms conditioned on text - [try it out here](https://www.riffusion.com/).
@@ -101,13 +104,35 @@ Key references:
 
 ## New Architectures and Approaches - Towards 'Iterative Refinement'
 
-Transformer in place of UNet (DiT)
+![image](https://user-images.githubusercontent.com/6575163/213731066-0fbe38a7-233f-42be-99fc-38cea889c86b.png)
 
-Recurrent Interface Networks (https://arxiv.org/pdf/2212.11972.pdf)
+_Figure 1 from the [Cold Diffusion](http://arxiv.org/abs/2208.09392) paper_
 
-MUSE/MaskGIT and Paella
+We are slowly moving beyond the original narrow definition of "diffusion" models and towards a more general class of models that perform **iterative refinement**, where some form of corruption (like the addition of gaussian noise in the forward diffusion process) is gradually reversed to generate samples. The 'Cold Diffusion' paper demonstrated that many other types of corruption can be iteratively 'undone' to generate images (examples shown above), and recent transformer-based approaches have demonstrated the effectiveness of token replacement or masking as a noising strategy.
 
+![image](https://user-images.githubusercontent.com/6575163/213731351-7fd6c98c-6ba6-4bd9-a898-230002fc334f.png)
 
-## Project Time
+_Pipeline from [MaskGIT](http://arxiv.org/abs/2202.04200)_
+
+The UNet architecture at the heart of many current diffusion models is also being replaced with different alternatives, most notably various transformer-based architectures. In [Scalable Diffusion Models with Transformers (DiT)](https://www.wpeebles.com/DiT) a transformer is used in place of the UNet for a fairly standard diffusion model approach, with excellent results. [Recurrent Interface Networks](https://arxiv.org/pdf/2212.11972.pdf) applies a novel transformer-based architecture and training strategy in pursuit of additional efficiency. [MaskGIT](http://arxiv.org/abs/2202.04200) and [MUSE]http://arxiv.org/abs/2301.00704 use transformer models to work with tokenized representations of images, although the [Paella](https://arxiv.org/abs/2211.07292v1) model demonstrates that a UNet can also be applied successfully to these token-based regimes too. 
+
+With each new paper more efficient or performant approaches are being developed, and it may be some time before we see what peak performance looks like on these kinds of iterative refinement tasks. There is much more still to explore!
+
+Key References
+
+- [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](http://arxiv.org/abs/2208.09392)
+- [Scalable Diffusion Models with Transformers (DiT)](https://www.wpeebles.com/DiT)
+- [MaskGIT: Masked Generative Image Transformer](http://arxiv.org/abs/2202.04200)
+- [Muse: Text-To-Image Generation via Masked Generative Transformers](http://arxiv.org/abs/2301.00704)
+- [Fast Text-Conditional Discrete Denoising on Vector-Quantized Latent Spaces (Paella)](https://arxiv.org/abs/2211.07292v1)
+- [Recurrent Interface Networks](https://arxiv.org/pdf/2212.11972.pdf)
+
+## Hands-On Notebooks
+
+We've covered a LOT of different ideas in this unit, many of which deserve much more detailed follow-on lessons in the future. For now, here are two demo notebooks for you to get hands-on with a couple of the ideas discussed above:
+- TODO link Image Editing with DDIM Inversion notebook
+- TODO link Birdcall Generation notebook
+
+## Where Next?
 
 TODO
