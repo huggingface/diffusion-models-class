@@ -68,6 +68,7 @@ The video ['Editing Images with Diffusion Models'](https://www.youtube.com/watch
 - [SmartBrush: Text and Shape Guided Object Inpainting with Diffusion Model](https://arxiv.org/abs/2212.05034) fine-tunes a diffusion model for more accurate mask-guided inpainting. 
 3) Cross-attention Control: using the cross-attention mechanism in diffusion models to control the spatial location of edits for more fine-grained control.
 - [Prompt-to-Prompt Image Editing with Cross Attention Control](https://arxiv.org/abs/2208.01626) is the key paper that introducd this idea, and the technique has [since been applied to Stable Diffusion](https://wandb.ai/wandb/cross-attention-control/reports/Improving-Generative-Images-with-Instructions-Prompt-to-Prompt-Image-Editing-with-Cross-Attention-Control--VmlldzoyNjk2MDAy)
+- This idea is also used for 'paint-with-words' ([eDiffi](http://arxiv.org/abs/2211.01324), shown above)
 4) Fine-tune ('overfit') on a single image and then generate with the fine-tuned model. The following papers both published variants of this idea at roughly the same time:
 - [Imagic: Text-Based Real Image Editing with Diffusion Models](https://arxiv.org/abs/2210.09276)
 - [UniTune: Text-Driven Image Editing by Fine Tuning an Image Generation Model on a Single Image
@@ -78,7 +79,10 @@ The paper [InstructPix2Pix: Learning to Follow Image Editing Instructions](https
 
 ## Video
 
-Video diffusion, Imagen Video
+![image](https://user-images.githubusercontent.com/6575163/213657523-be40178a-4357-410b-89e3-a4cbd8528900.png)
+_Still frames from [sample videos generated with Imagen Video](https://imagen.research.google/video/)_
+
+A video can be represented as a sequence of images, and the core ideas of diffusion models can be applied to these sequences. Recent work has focused on findingappropriate architectures (such as '3D UNets' which operate on entire sequences) and on working efficiently with video data. Since high-frame-rate video involves a lot more data than still images, current approaches tend to first generate low-resolution and low-frame-rate video and then apply spatial and temporal super-resolution to produce the final high-quality video outputs. 
 
 Key Papers:
 - [Video Diffusion Models](https://video-diffusion.github.io/)
@@ -86,10 +90,16 @@ Key Papers:
 
 ## Audio
 
-- Riffusion (and possibly notebook on the idea)
-- Non-spectrogram paper
+![image](https://user-images.githubusercontent.com/6575163/213657272-a1b54017-216f-453b-9b28-97c6fef21f54.png)
+_A spectrogram generated with Riffusion ([image source](https://www.riffusion.com/about))_
 
-## New Architectures and Approaches
+While there has been some work on generating audio directly using diffusion models (e.g. [DiffWave](https://arxiv.org/abs/2009.09761)) the most successful approach so far has been to convert the audio signal into something called a spectrogram, which effectively 'encodes' the audio as a 2D "image" which can then be used to train the kinds of diffusion models we're used to using for image generation. The resulting generated spectrograms can then be converted into audio using existing methods. This approach is behind the recently-released Riffusion, which fine-tuned Stable Diffusion to generate spectrograms conditioned on text - [try it out here](https://www.riffusion.com/).
+
+Key references:
+- [DiffWave: A Versatile Diffusion Model for Audio Synthesis](https://arxiv.org/abs/2009.09761)
+- ['Riffusion'](https://www.riffusion.com/about) (and [code](https://github.com/riffusion/riffusion))
+
+## New Architectures and Approaches - Towards 'Iterative Refinement'
 
 Transformer in place of UNet (DiT)
 
