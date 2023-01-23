@@ -38,7 +38,7 @@ _Figure 2 from the [ERNIE-ViLG 2.0 paper](http://arxiv.org/abs/2210.15257)_
 
 Key training improvements:
 - Tuning the noise schedule, loss weighting and sampling trajectories for more efficient training. An excellent paper exploring some of these design choices is [Elucidating the Design Space of Diffusion-Based Generative Models](http://arxiv.org/abs/2206.00364) by Karras et al.
-- Training on diverse aspect rations, as described in [this video from the course launch event](https://www.youtube.com/watch?v=g6tIUrMvOec). 
+- Training on diverse aspect ratios, as described in [this video from the course launch event](https://www.youtube.com/watch?v=g6tIUrMvOec). 
 - Cascaded diffusion models, training one model at low resolution and then one or more super-res models. Used in DALLE-2, Imagen and more for high-resolution image generation. 
 - Better conditioning, incorporating rich text embeddings ([Imagen](https://arxiv.org/abs/2205.11487) uses a large language model called T5) or multiple types of conditioning ([eDiffi](http://arxiv.org/abs/2211.01324))
 - 'Knowledge Enhancement' - incorporating pre-trained image captioning and object detection models into the training process to create more informative captions and produce better performance ([ERNIE-ViLG 2.0](http://arxiv.org/abs/2210.15257))
@@ -65,11 +65,11 @@ The video ['Editing Images with Diffusion Models'](https://www.youtube.com/watch
 - [Null-text Inversion](https://null-text-inversion.github.io/) enhances the performance of this kind of approach dramatically by optimizing the unconditional text embeddings used for classifier-free-guidance at each step, allowing for extremely high-quality text-based image editing.
 2) Extending the ideas in (1) but with a mask to control where the effect is applied
 - [Blended Diffusion](https://omriavrahami.com/blended-diffusion-page/) introduces the basic idea
-- This demo](https://huggingface.co/spaces/nielsr/text-based-inpainting) uses an existing segmentation model (CLIPSeg) to create the mask based on a text description
+- [This demo](https://huggingface.co/spaces/nielsr/text-based-inpainting) uses an existing segmentation model (CLIPSeg) to create the mask based on a text description
 - [DiffEdit](https://arxiv.org/abs/2210.11427) is an excellent paper that shows how the diffusion model itself can be used to generate an appropriate mask for editing the image based on text.
 - [SmartBrush: Text and Shape Guided Object Inpainting with Diffusion Model](https://arxiv.org/abs/2212.05034) fine-tunes a diffusion model for more accurate mask-guided inpainting. 
 3) Cross-attention Control: using the cross-attention mechanism in diffusion models to control the spatial location of edits for more fine-grained control.
-- [Prompt-to-Prompt Image Editing with Cross Attention Control](https://arxiv.org/abs/2208.01626) is the key paper that introducd this idea, and the technique has [since been applied to Stable Diffusion](https://wandb.ai/wandb/cross-attention-control/reports/Improving-Generative-Images-with-Instructions-Prompt-to-Prompt-Image-Editing-with-Cross-Attention-Control--VmlldzoyNjk2MDAy)
+- [Prompt-to-Prompt Image Editing with Cross Attention Control](https://arxiv.org/abs/2208.01626) is the key paper that introduced this idea, and the technique has [since been applied to Stable Diffusion](https://wandb.ai/wandb/cross-attention-control/reports/Improving-Generative-Images-with-Instructions-Prompt-to-Prompt-Image-Editing-with-Cross-Attention-Control--VmlldzoyNjk2MDAy)
 - This idea is also used for 'paint-with-words' ([eDiffi](http://arxiv.org/abs/2211.01324), shown above)
 4) Fine-tune ('overfit') on a single image and then generate with the fine-tuned model. The following papers both published variants of this idea at roughly the same time:
 - [Imagic: Text-Based Real Image Editing with Diffusion Models](https://arxiv.org/abs/2210.09276)
@@ -84,7 +84,7 @@ The paper [InstructPix2Pix: Learning to Follow Image Editing Instructions](https
 ![image](https://user-images.githubusercontent.com/6575163/213657523-be40178a-4357-410b-89e3-a4cbd8528900.png)
 _Still frames from [sample videos generated with Imagen Video](https://imagen.research.google/video/)_
 
-A video can be represented as a sequence of images, and the core ideas of diffusion models can be applied to these sequences. Recent work has focused on findingappropriate architectures (such as '3D UNets' which operate on entire sequences) and on working efficiently with video data. Since high-frame-rate video involves a lot more data than still images, current approaches tend to first generate low-resolution and low-frame-rate video and then apply spatial and temporal super-resolution to produce the final high-quality video outputs. 
+A video can be represented as a sequence of images, and the core ideas of diffusion models can be applied to these sequences. Recent work has focused on finding appropriate architectures (such as '3D UNets' which operate on entire sequences) and on working efficiently with video data. Since high-frame-rate video involves a lot more data than still images, current approaches tend to first generate low-resolution and low-frame-rate video and then apply spatial and temporal super-resolution to produce the final high-quality video outputs. 
 
 Key references:
 - [Video Diffusion Models](https://video-diffusion.github.io/)
@@ -114,9 +114,9 @@ We are slowly moving beyond the original narrow definition of "diffusion" models
 
 _Pipeline from [MaskGIT](http://arxiv.org/abs/2202.04200)_
 
-The UNet architecture at the heart of many current diffusion models is also being replaced with different alternatives, most notably various transformer-based architectures. In [Scalable Diffusion Models with Transformers (DiT)](https://www.wpeebles.com/DiT) a transformer is used in place of the UNet for a fairly standard diffusion model approach, with excellent results. [Recurrent Interface Networks](https://arxiv.org/pdf/2212.11972.pdf) applies a novel transformer-based architecture and training strategy in pursuit of additional efficiency. [MaskGIT](http://arxiv.org/abs/2202.04200) and [MUSE]http://arxiv.org/abs/2301.00704 use transformer models to work with tokenized representations of images, although the [Paella](https://arxiv.org/abs/2211.07292v1) model demonstrates that a UNet can also be applied successfully to these token-based regimes too. 
+The UNet architecture at the heart of many current diffusion models is also being replaced with different alternatives, most notably various transformer-based architectures. In [Scalable Diffusion Models with Transformers (DiT)](https://www.wpeebles.com/DiT) a transformer is used in place of the UNet for a fairly standard diffusion model approach, with excellent results. [Recurrent Interface Networks](https://arxiv.org/pdf/2212.11972.pdf) applies a novel transformer-based architecture and training strategy in pursuit of additional efficiency. [MaskGIT](http://arxiv.org/abs/2202.04200) and [MUSE](http://arxiv.org/abs/2301.00704) use transformer models to work with tokenized representations of images, although the [Paella](https://arxiv.org/abs/2211.07292v1) model demonstrates that a UNet can also be applied successfully to these token-based regimes too. 
 
-With each new paper more efficient or performant approaches are being developed, and it may be some time before we see what peak performance looks like on these kinds of iterative refinement tasks. There is much more still to explore!
+With each new paper more efficient approaches are being developed, and it may be some time before we see what peak performance looks like on these kinds of iterative refinement tasks. There is much more still to explore!
 
 Key references
 
