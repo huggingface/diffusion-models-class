@@ -131,7 +131,7 @@ Key references
 - [MaskGIT: Masked Generative Image Transformer](http://arxiv.org/abs/2202.04200)
 - [Muse: Text-To-Image Generation via Masked Generative Transformers](http://arxiv.org/abs/2301.00704)
 - [Fast Text-Conditional Discrete Denoising on Vector-Quantized Latent Spaces (Paella)](https://arxiv.org/abs/2211.07292v1)
-- [Recurrent Interface Networks](https://arxiv.org/pdf/2212.11972.pdf)
+- [Recurrent Interface Networks](https://arxiv.org/pdf/2212.11972.pdf) - a promising new architecture that does well at generating high-resolution images without relying on latent diffusion or super-resolution. See also, [simple diffusion: End-to-end diffusion for high resolution images](https://arxiv.org/abs/2301.11093) which highlights the importance of the noise schedule for training at higher resolutions.
 
 ## Hands-On Notebooks
 
