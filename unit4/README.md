@@ -98,9 +98,15 @@ _A spectrogram generated with Riffusion ([image source](https://www.riffusion.co
 
 While there has been some work on generating audio directly using diffusion models (e.g. [DiffWave](https://arxiv.org/abs/2009.09761)) the most successful approach so far has been to convert the audio signal into something called a spectrogram, which effectively 'encodes' the audio as a 2D "image" which can then be used to train the kinds of diffusion models we're used to using for image generation. The resulting generated spectrograms can then be converted into audio using existing methods. This approach is behind the recently-released Riffusion, which fine-tuned Stable Diffusion to generate spectrograms conditioned on text - [try it out here](https://www.riffusion.com/).
 
+The field of audio generation is moving extremely quickly. Over the past week (at the time of writing) there have been at least 5 new advances announced, which are marked with a star in the list below:
+
 Key references:
 - [DiffWave: A Versatile Diffusion Model for Audio Synthesis](https://arxiv.org/abs/2009.09761)
 - ['Riffusion'](https://www.riffusion.com/about) (and [code](https://github.com/riffusion/riffusion))
+- *[MusicLM](https://google-research.github.io/seanet/musiclm/examples/) by Google generates consistent audio from text and can be conditioned with hummed or whistled melodies
+- *[RAVE2](https://github.com/acids-ircam/RAVE) - a new version of a Variational Auto-Encoder that will be useful for latent diffusion on audio tasks. This is used in the soon-to-be-announced *[AudioLDM](https://twitter.com/LiuHaohe/status/1619119637660327936?s=20&t=jMkPWBFuAH19HI9m5Sklmg) model
+- *[Noise2Music](https://noise2music.github.io/) - A diffusion model trained to produce high-quality 30-second clips of audio based on text descriptions
+- *[Make-An-Audio: Text-To-Audio Generation with Prompt-Enhanced Diffusion Models](https://text-to-audio.github.io/) - a diffusion model trained to generate diverse sounds based on text
 
 ## New Architectures and Approaches - Towards 'Iterative Refinement'
 
