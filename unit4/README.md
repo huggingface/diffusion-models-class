@@ -107,6 +107,7 @@ Key references:
 - *[RAVE2](https://github.com/acids-ircam/RAVE) - a new version of a Variational Auto-Encoder that will be useful for latent diffusion on audio tasks. This is used in the soon-to-be-announced *[AudioLDM](https://twitter.com/LiuHaohe/status/1619119637660327936?s=20&t=jMkPWBFuAH19HI9m5Sklmg) model
 - *[Noise2Music](https://noise2music.github.io/) - A diffusion model trained to produce high-quality 30-second clips of audio based on text descriptions
 - *[Make-An-Audio: Text-To-Audio Generation with Prompt-Enhanced Diffusion Models](https://text-to-audio.github.io/) - a diffusion model trained to generate diverse sounds based on text
+- *[Moûsai: Text-to-Music Generation with Long-Context Latent Diffusion](https://arxiv.org/abs/2301.11757)
 
 ## New Architectures and Approaches - Towards 'Iterative Refinement'
 
