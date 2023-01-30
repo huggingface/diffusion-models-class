@@ -1,5 +1,8 @@
 # DreamBooth Hackathon 🏆
 
+📣 **The hackathon is now over and the winners have been announced on Discord. You are still welcome to train models and submit them to the leaderboard, but we won't be offering prizes or certificates at this point in time.**
+
+
 Welcome to the DreamBooth Hackathon! This is a community event where you'll **personalise a Stable Diffusion model by fine-tuning it on a handful of your own images.** To do so, you'll use a powerful technique called [_DreamBooth_](https://arxiv.org/abs/2208.12242), which allows one to implant a subject (e.g. your pet or favourite dish) into the output domain of the model such that it can be synthesized with a _unique identifier_ in the prompt.
 
 This competition is composed of 5 _themes_, where each theme will collect models belong to the following categories:
