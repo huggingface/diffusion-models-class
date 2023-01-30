@@ -13,6 +13,18 @@ Here are the steps for this unit:
 
 :loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
 
+## Table of Contents
+
+- [Faster Sampling via Distillation](#faster-sampling-via-distillation)
+- [Training Improvements](#training-improvements)
+- [More Control for Generation and Editing](more-control-for-generation-and-editing)
+- [Video](#video)
+- [Audio](#audio)
+- [New Architectures and Approaches - Towards 'Iterative Refinement'](#new-architectures-and-approaches---towards-iterative-refinement)
+- [Hands-On Notebooks](#hands-on-notebooks)
+- [Where Next?](#where-next)
+
+
 ## Faster Sampling via Distillation
 
 Progressive distillation is a technique for taking an existing diffusion model and using it to train a new version of the model that requires fewer steps for inference. The 'student' model is initialized from the weights of the 'teacher' model. During training, the teacher model performs two sampling steps and the student model tries to match the resulting prediction in a single step. This process can be repeated mutiple times, with the previous iteration's student model becoming the teacher for the next stage. The end result is a model that can produce decent samples in much fewer steps (typically 4 or 8) than the original teacher model. The core mechanism is illustrated in this diagram from the [paper that introduced the idea](http://arxiv.org/abs/2202.00512):
@@ -107,6 +119,7 @@ Key references:
 - *[RAVE2](https://github.com/acids-ircam/RAVE) - a new version of a Variational Auto-Encoder that will be useful for latent diffusion on audio tasks. This is used in the soon-to-be-announced *[AudioLDM](https://twitter.com/LiuHaohe/status/1619119637660327936?s=20&t=jMkPWBFuAH19HI9m5Sklmg) model
 - *[Noise2Music](https://noise2music.github.io/) - A diffusion model trained to produce high-quality 30-second clips of audio based on text descriptions
 - *[Make-An-Audio: Text-To-Audio Generation with Prompt-Enhanced Diffusion Models](https://text-to-audio.github.io/) - a diffusion model trained to generate diverse sounds based on text
+- *[Moûsai: Text-to-Music Generation with Long-Context Latent Diffusion](https://arxiv.org/abs/2301.11757)
 
 ## New Architectures and Approaches - Towards 'Iterative Refinement'
 
@@ -135,10 +148,12 @@ Key references
 
 ## Hands-On Notebooks
 
-We've covered a LOT of different ideas in this unit, many of which deserve much more detailed follow-on lessons in the future. For now, here are two demo notebooks for you to get hands-on with a couple of the ideas discussed above:
-- TODO link Image Editing with DDIM Inversion notebook
-- TODO link Birdcall Generation notebook
+TODO link table
+
+We've covered a LOT of different ideas in this unit, many of which deserve much more detailed follow-on lessons in the future. For now, you can two of the many topics via the hands-on notebooks we've prepared.
+- **DDIM Inversion** shows how a technique called inversion can be used to edit images using existing diffusion models
+- **Diffusion for Audio** introduces the idea of spectrograms and shows a minimal example of fine-tuning an audio diffusion model on a specific genre of music.
 
 ## Where Next?
 
-TODO
+This is the final unit of this course for now, which means that what comes next is up to you! Remember that you can always ask questions and chat about your projects on the Hugging Face [Discord](https://huggingface.co/join/discord). We look forward to seeing what you create 🤗
