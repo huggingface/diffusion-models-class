@@ -135,10 +135,12 @@ Key references
 
 ## Hands-On Notebooks
 
-We've covered a LOT of different ideas in this unit, many of which deserve much more detailed follow-on lessons in the future. For now, here are two demo notebooks for you to get hands-on with a couple of the ideas discussed above:
-- TODO link Image Editing with DDIM Inversion notebook
-- TODO link Birdcall Generation notebook
+TODO link table
+
+We've covered a LOT of different ideas in this unit, many of which deserve much more detailed follow-on lessons in the future. For now, you can two of the many topics via the hands-on notebooks we've prepared.
+- **DDIM Inversion** shows how a technique called inversion can be used to edit images using existing diffusion models
+- **Diffusion for Audio** introduces the idea of spectrograms and shows a minimal example of fine-tuning an audio diffusion model on a specific genre of music.
 
 ## Where Next?
 
-TODO
+This is the final unit of this course for now, which means that what comes next is up to you! Remember that you can always ask questions and chat about your projects on the Hugging Face [Discord](https://huggingface.co/join/discord). We look forward to seeing what you create 🤗
