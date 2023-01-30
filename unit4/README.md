@@ -13,6 +13,18 @@ Here are the steps for this unit:
 
 :loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
 
+## Table of Contents
+
+- [Faster Sampling via Distillation](#faster-sampling-via-distillation)
+- [Training Improvements](#training-improvements)
+- [More Control for Generation and Editing](more-control-for-generation-and-editing)
+- [Video](#video)
+- [Audio](#audio)
+- [New Architectures and Approaches - Towards 'Iterative Refinement'](#new-architectures-and-approaches---towards-iterative-refinement)
+- [Hands-On Notebooks](#hands-on-notebooks)
+- [Where Next?](#where-next)
+
+
 ## Faster Sampling via Distillation
 
 Progressive distillation is a technique for taking an existing diffusion model and using it to train a new version of the model that requires fewer steps for inference. The 'student' model is initialized from the weights of the 'teacher' model. During training, the teacher model performs two sampling steps and the student model tries to match the resulting prediction in a single step. This process can be repeated mutiple times, with the previous iteration's student model becoming the teacher for the next stage. The end result is a model that can produce decent samples in much fewer steps (typically 4 or 8) than the original teacher model. The core mechanism is illustrated in this diagram from the [paper that introduced the idea](http://arxiv.org/abs/2202.00512):
