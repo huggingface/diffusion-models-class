@@ -54,11 +54,11 @@ You can create one here 👉 [https://huggingface.co/join](https://huggingface.c
 
 The course will consist of at least **4 Units.** More will be added as time goes on, on topics like diffusion for audio. 
 
-Each unit consists of some theory and background alongisde one or more hands-on notebooks. Some units will also contain suggested projects and we'll have competitions and swag for the best pipelines and demos (more details TDB).
+Each unit consists of some theory and background alongside one or more hands-on notebooks. Some units will also contain suggested projects and we'll have competitions and swag for the best pipelines and demos (more details TBD).
 
 ## 🌎 Languages and translations
 
-Members of the 🤗 community have begin translating the course! We're planning to host this course on the [Hugging Face website](https://huggingface.co/), so if you're interested in contributing a translation, we recommend waiting until we've formatted the English content in it's final form.
+Members of the 🤗 community have begun translating the course! We're planning to host this course on the [Hugging Face website](https://huggingface.co/), so if you're interested in contributing a translation, we recommend waiting until we've formatted the English content in it's final form.
 
 | Language                                                                      | Authors |
 |:------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
