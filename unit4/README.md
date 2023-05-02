@@ -76,7 +76,7 @@ The video ['Editing Images with Diffusion Models'](https://www.youtube.com/watch
 
 1) Add noise and then denoise with a new prompt. This is the idea behind the `img2img` pipeline, which has been modified and extended in various papers:
 - [SDEdit](https://sde-image-editing.github.io/) and [MagicMix](https://magicmix.github.io/) build on this idea
-- DDIM inversion (TODO link tutorial) uses the model to 'reverse' the sampling trajectory rather than adding random noise, giving more control
+- [DDIM inversion](https://github.com/huggingface/diffusion-models-class/blob/main/unit4/01_ddim_inversion.ipynb) uses the model to 'reverse' the sampling trajectory rather than adding random noise, giving more control
 - [Null-text Inversion](https://null-text-inversion.github.io/) enhances the performance of this kind of approach dramatically by optimizing the unconditional text embeddings used for classifier-free guidance at each step, allowing for extremely high-quality text-based image editing.
 2) Extending the ideas in (1) but with a mask to control where the effect is applied
 - [Blended Diffusion](https://omriavrahami.com/blended-diffusion-page/) introduces the basic idea
