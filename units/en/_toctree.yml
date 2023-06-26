@@ -1,0 +1,51 @@
+- title: Course introduction
+  sections:
+  - local: unit0/1
+    title: Introduction
+
+- title: 1. Introduction to diffusion models
+  sections:
+  - local: unit1/1
+    title: Overview
+  - local: unit1/2
+    title: Implementation with 🤗 Diffusers
+  - local: unit1/3
+    title: Implementation from scratch
+
+- title: 2. Fine-Tuning, Guidance and Conditioning
+  sections:
+  - local: unit2/1
+    title: Overview
+  - local: unit2/2
+    title: Fine-Tuning and guidance 
+  - local: unit2/3
+    title: Class-conditioned Diffusion Model
+
+- title: 3. Stable Diffusion
+  sections:
+  - local: unit3/1
+    title: Overview
+  - local: unit3/2
+    title: Introduction to Stable Diffusion 
+  - local: unit3/3
+    title: Deep dive into Stable Diffusion
+
+- title: 4. Going Further with Diffusion Models
+  sections:
+  - local: unit4/1
+    title: Overview
+  - local: unit4/2
+    title: Inverse Denoising Diffusion Implicit Models
+  - local: unit4/3
+    title: Diffusion for audio
+
+- title: Events related to the course
+  sections:
+  - local: events/launch
+    title: Diffusion Models Live Event
+  - local: events/dreambooth
+    title: Dreambooth Hackathon
+  - local: events/3
+    title: Keras Dreambooth event
+  - local: events/4
+    title: JAX/Diffusers community sprint

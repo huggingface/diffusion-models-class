@@ -1,0 +1,192 @@
+# Sprint Dreambooth en Keras
+
+Cette paget résume toutes les informations pertinentes requises pour l'événement. 📋.
+
+## Introduction
+
+Dreambooth est une technique de *finetuning* permettant d'enseigner de nouveaux concepts visuels à des modèles de diffusion conditionnés par le texte en utilisant seulement 3 à 5 images. Avec Dreambooth, vous pouvez générer des images drôles et réalistes de votre chien, de vous-même et de n'importe quel concept avec quelques images en utilisant Stable Diffusion. 
+DreamBooth a été proposé dans [DreamBooth : Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation] (https://arxiv.org/abs/2208.12242) par Ruiz et al. (2022)
+
+Nous allons entraîner les modèles Dreambooth à l'aide de KerasCV et construire des démonstrations sur ces modèles. 
+
+
+## Dates importantes
+
+- Lancement de l'événement : 6 mars 2023  
+Avec Nataniel Ruiz sur DreamBooth, François Chollet sur KerasCV et Apolinario Passos sur 🤗 Diffusers
+<Youtube id="Njt8BuSW-TQ" />  
+
+- Début du sprint : 7 mars 2023
+- Fin du sprint : 1er avril 2023
+- Résultats : 7 avril 2023
+
+
+## Getting Started 🚀 
+
+To get started, join us in [hf.co/join/discord](http://hf.co/join/discord) and take the role #open-source, and meet us in #keras-working-group channel. 
+
+We will be hosting our demos in this organization on Hugging Face Hub: [keras-dreambooth](https://huggingface.co/keras-dreambooth), send a request to join [here](https://huggingface.co/organizations/keras-dreambooth/share/RMocthadPgpxxUDHtAesrbBzieDLgUfPmv) if you’d like to make a submission 🙂
+
+We will:
+
+1. Fine-tune Stable Diffusion on any concept we want using Dreambooth,
+2. Push the model to Hugging Face Hub,
+3. Fill the model card,
+4. Build a demo on top of the model.
+
+**Warning:** The trained models need to be in one of the 4 categories mentioned in the Submission section. Please take a look at that before training your model.
+
+
+## Démarrer 🚀 
+
+Pour commencer, rejoignez-nous sur [hf.co/join/discord](http://hf.co/join/discord) et prenez le rôle #open-source, et rencontrez-nous sur le canal #keras-working-group. 
+
+Nous hébergerons nos démonstrations dans cette organisation sur Hugging Face Hub : [keras-dreambooth](https://huggingface.co/keras-dreambooth), envoyez une demande [ici](https://huggingface.co/organizations/keras-dreambooth/share/RMocthadPgpxxUDHtAesrbBzieDLgUfPmv) si vous souhaitez soumettre une proposition 🙂
+
+Nous allons :
+
+1. *Finetuner* Stable Diffusion sur n'importe quel concept que nous voulons en utilisant Dreambooth,
+2. Pousser le modèle vers le *Hub* d'Hugging Face,
+3. Remplir la carte du modèle,
+4. Construire une démo à partir du modèle.
+
+**Avertissement:** Les modèles entraînés doivent être dans l'une des 4 catégories mentionnées dans la section Soumission. Veuillez y jeter un coup d'œil avant d'entraîner votre modèle.
+
+
+## Entraînement du modèle
+
+Vous pouvez trouver le notebook [ici](https://colab.research.google.com/github/huggingface/community-events/blob/main/keras-dreambooth-sprint/Dreambooth_on_Hub.ipynb) (en anglais) et l'adapter à votre propre jeu de données.
+
+Quelques inspirations pour le *finetuning* : 
+
+1. *Lowpoly World* : Ce [modèle](https://huggingface.co/MirageML/lowpoly-world) génère des mondes *low poly* 🤯🌍
+2. *Future Diffusion* : Ce [modèle](https://huggingface.co/nitrosocke/Future-Diffusion) génère des images dans des concepts de science-fiction futuristes 🤖
+3. *Fantasy sword* : Ce [modèle](https://huggingface.co/MirageML/fantasy-sword) génère des épées pour des jeux à thème fantastique 🧙‍♂️
+
+Si vous avez besoin de plus d'indications sur l'implémentation de Dreambooth avec Keras, vous pouvez consulter [ce dépôt](https://github.com/sayakpaul/dreambooth-keras). 
+
+
+## Dreambooth avec KerasCV
+
+Pour l'instant, les options d'inférence et de déploiement de `KerasCV` sont limitées, et c'est là que la bibliothèque `diffusers` vient à la rescousse. Avec seulement quelques lignes de code, nous pouvons convertir un modèle `KerasCV` en un modèle `diffusers` et utiliser les pipelines `diffusers` pour effectuer l'inférence. Vous pouvez obtenir plus d'informations [ici](https://huggingface.co/docs/diffusers/main/en/using-diffusers/kerascv). Consultez aussi [ce Space](https://huggingface.co/spaces/sayakpaul/convert-kerascv-sd-diffusers) pour convertir votre modèle `KerasCV` en un modèle `diffusers`. 
+
+Les dépôts `diffusers` sur le Hub bénéficient d'une API d'inférence gratuite et de petits widgets dans la page du modèle où les utilisateurs peuvent jouer avec le modèle.
+
+```py
+from diffusers import StableDiffusionPipeline
+
+# point de contrôle de Stable Diffusion converti de KerasCV
+model_ckpt = "sayakpaul/text-unet-dogs-kerascv_sd_diffusers_pipeline"
+pipeline = StableDiffusionPipeline.from_pretrained(model_ckpt)
+pipeline.to("cuda")
+
+unique_id = "sks"
+class_label = "dog"
+prompt = f"A photo of {unique_id} {class_label} in a bucket"
+image = pipeline(prompt, num_inference_steps=50).images[0]
+```
+
+## Hébergement du modèle
+
+À la fin du *notebook* vous verrez une section dédiée à l'hébergement, et une section séparée pour l'inférence. Nous utiliserons les fonctions de chargement et de poussée de modèles spécifiques à Keras de la bibliothèque `huggingface_hub` : `push_to_hub_keras` et `from_pretrained_keras`. Nous allons d'abord pousser le modèle en utilisant `push_to_hub_keras`. Une fois le modèle poussé, vous verrez que le modèle est hébergé avec une carte de modèle comme ci-dessous :
+
+![Référentiel](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/dreamboothrepo.png)
+
+Pour mieux versionner les modèles, permettre la découvrabilité et la reproductibilité, nous allons remplir la carte de modèle.  Cliquez sur `*Edit model card*`. Nous allons d'abord remplir la section Metadata de la fiche de modèle. Si votre modèle est entraîné avec un jeu de données du *Hub*, vous pouvez remplir la section des jeux de données avec le jeu de données. Nous allons remplir `pipeline_tag` avec `text-to-image` et choisir une licence pour notre modèle. 
+
+![Métadonnées](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/dreambooth-etadata.png)
+
+Ensuite, nous remplirons la partie markdown. Les hyperparamètres et le graphe sont automatiquement générés, nous pouvons donc écrire une courte explication pour la description, l'utilisation prévue et le jeu de données.
+
+Vous pouvez trouver l'exemple de dépôt ci-dessous [ici](https://huggingface.co/keras-dreambooth/dreambooth_diffusion_model).
+
+
+## Démo
+
+Nous allons utiliser Gradio pour construire nos démonstrations pour les modèles que nous avons entraînés. Avec la classe `Interface`, c'est simple :
+
+```py
+from huggingface_hub import from_pretrained_keras
+from keras_cv import models
+import gradio as gr
+
+sd_dreambooth_model = models.StableDiffusion(
+    img_width=512, img_height=512
+)
+db_diffusion_model = from_pretrained_keras("merve/dreambooth_diffusion_model")
+sd_dreambooth_model._diffusion_model = db_diffusion_model
+
+# générer des images
+def infer(prompt):
+    generated_images = sd_dreambooth_model.text_to_image(
+        prompt
+    )
+    return generated_images 
+    
+    
+output = gr.Gallery(label="Outputs").style(grid=(2,2))
+
+# la fonction de passage, le type d'entrée pour le prompt, la sortie pour les images multiples
+gr.Interface(infer, inputs=["text"], outputs=[output]).launch()
+```
+
+Vous pouvez consulter le fichier `app.py` de l'application ci-dessous et le réutiliser pour votre modèle !
+
+[Dreambooth Submission - a Hugging Face Space par keras-dreambooth](https://huggingface.co/spaces/keras-dreambooth/example-submission)
+
+Cette application génère des images d'un corgi 🐶 
+
+![Dreambooth App](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/dreambooth_corgi.png)
+
+## Hébergement de la démonstration sur Spaces
+
+Une fois notre application terminée, nous pouvons créer un *Space* sur Hugging Face pour héberger notre application. Vous pouvez aller sur [huggingface.co] (http://huggingface.co), cliquer sur votre profil en haut à droite et sélectionner "*New Space*".
+
+![New Space](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/new_space.png)
+
+Nous pouvons nommer notre *Space*, choisir une licence et sélectionner "*Gradio*" comme Space SDK. 
+
+![Space Configuration](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/space_config.png)
+
+Après avoir créé le *Space*, vous pouvez utiliser soit les instructions ci-dessous pour cloner le dépôt localement, ajouter vos fichiers et pousser, OU, l'interface graphique pour créer les fichiers et écrire le code dans le navigateur.
+
+![Spaces Landing](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/repository_landing.png)
+
+Pour télécharger votre fichier, cliquez sur "*Add File*" et faites glisser/déposer votre fichier.
+
+![New Space Landing](https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/add_file.png)
+
+Enfin, nous devons créer un fichier appelé `requirements.txt` et ajouter les conditions du projet Dreambooth comme ci-dessous : 
+
+```
+keras-cv
+tensorflow
+huggingface-hub
+```
+
+Et votre application devrait être opérationnelle !
+
+Nous hébergerons nos modèles et nos *Spaces* sous [cette organisation] (https://huggingface.co/keras-dreambooth). Vous pouvez transporter vos modèles et *Spaces* dans l'onglet paramètres sous `Rename or transfer this model` et sélectionner `keras-dreambooth` dans le menu déroulant. 
+
+Si vous ne voyez pas `keras-dreambooth` dans la liste déroulante, il est probable que vous ne soyez pas membre de l'organisation. Utilisez [ce lien](https://huggingface.co/organizations/keras-dreambooth/share/bfDDnByLbvPRYypHNUoZJgBgbgtTEYYgVl) pour demander à rejoindre l'organisation.
+
+## Soumission 
+
+Vous pouvez soumettre votre projet dans trois thèmes : 
+
+- Nature et animaux (`nature`)
+- Univers de science-fiction/fantastique (`sci-fi`)
+- Conscient (`consentful`) : Associez-vous à un artiste pour *finetuner* son style avec son consentement ! Assurez-vous d'inclure une référence au consentement explicite de l'artiste (par exemple un tweet) dans votre carte de modèle.
+- Carte blanche (`wild-card`) : Si votre soumission appartient à une catégorie qui n'est pas mentionnée ci-dessus, n'hésitez pas à l'étiqueter avec `wild-card` afin que nous puissions l'évaluer en dehors de cette catégorie.
+
+Ajoutez les catégories et leurs identifiants à votre carte modèle et ajoutez `keras-dreambooth` aux métadonnées dans la section des tags. Voici un exemple de [carte de modèle](https://huggingface.co/spaces/keras-dreambooth/example-submission/blob/main/README.md). Toutes les soumissions seront compilées [dans ce classement](https://huggingface.co/spaces/keras-dreambooth/leaderboard) et classées en fonction du nombre de likes sur un espace donné afin de déterminer les gagnants.
+
+## Prix
+
+Nous choisirons trois gagnants parmi les applications soumises, en fonction du nombre de likes accordés à un espace dans une catégorie donnée. 
+
+🛍️ Le premier remportera un bon d'achat de 100$ sur [hf.co/shop](http://hf.co/shop) ou un an d'abonnement à [Hugging Face Pro](https://huggingface.co/pricing#pro)
+
+🛍️ La deuxième remportera un bon d'achat de 50$ sur [hf.co/shop](http://hf.co/shop) ou [le livre](https://transformersbook.com/) *Natural Language Processing with Transformers*.
+
+🛍️ Le troisième remportera un bon d'achat de 30$ sur [hf.co/shop](http://hf.co/shop) ou trois mois d'abonnement à [Hugging Face Pro](https://huggingface.co/pricing#pro)

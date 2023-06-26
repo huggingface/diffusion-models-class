@@ -1,0 +1,51 @@
+- title: Introduction au cours
+  sections:
+  - local: unit0/1
+    title: Introduction
+
+- title: 1. Introduction aux modèles de diffusion
+  sections:
+  - local: unit1/1
+    title: Vue d'ensemble
+  - local: unit1/2
+    title: Introduction à 🤗 Diffusers
+  - local: unit1/3
+    title: Implémentation à partir de 0
+
+- title: 2. <i>Finetuning</i>, guidage et conditionnement
+  sections:
+  - local: unit2/1
+    title: Vue d'ensemble
+  - local: unit2/2
+    title: <i>Finetuning</i> et guidage 
+  - local: unit2/3
+    title: Modèle de diffusion conditionné par la classe
+
+- title: 3. Stable Diffusion
+  sections:
+  - local: unit3/1
+    title: Vue d'ensemble
+  - local: unit3/2
+    title: Introduction à Stable Diffusion 
+  - local: unit3/3
+    title: Stable Diffusion : plongée en profondeur
+
+- title: 4. Aller plus loin avec les modèles de diffusion
+  sections:
+  - local: unit4/1
+    title: Vue d'ensemble
+  - local: unit4/2
+    title: Débruitage inverse des modèles de diffusion implicites
+  - local: unit4/3
+    title: Diffusion pour l'audio
+
+- title: Evènements liés au cours
+  sections:
+  - local: events/1
+    title: Lancement du cours
+  - local: events/2
+    title: Hackathon Dreambooth
+  - local: events/3
+    title: Sprint Dreambooth en Keras
+  - local: events/4
+    title: Sprint ControlNet en JAX/Diffusers
