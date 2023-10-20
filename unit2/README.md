@@ -6,10 +6,10 @@ Welcome to Unit 2 of the Hugging Face Diffusion Models Course! In this unit, you
 
 Here are the steps for this unit:
 
-- Make sure you've [signed up for this course](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162) so that you can be notified when new material is released
-- Read through the material below for an overview of the key ideas of this unit
-- Check out the _**Fine-tuning and Guidance**_ notebook to fine-tune an existing diffusion model on a new dataset using the 🤗 Diffusers library and to modify the sampling procedure using guidance
-- Follow the example in the notebook to share a Gradio demo for your custom model
+- Make sure you've [signed up for this course](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162) so that you can be notified when new material is released.
+- Read through the material below for an overview of the key ideas of this unit.
+- Check out the _**Fine-tuning and Guidance**_ notebook to fine-tune an existing diffusion model on a new dataset using the 🤗 Diffusers library and to modify the sampling procedure using guidance.
+- Follow the example in the notebook to share a Gradio demo for your custom model.
 - (Optional) Check out the _**Class-conditioned Diffusion Model Example**_ notebook to see how we can add additional control to the generation process.
 - (Optional) Check out [this video](https://www.youtube.com/watch?v=mY20iKOQ2zw) for an informal run-through of the material in this unit.
 

@@ -60,7 +60,7 @@ We will be awarding 3 prizes per theme, where **winners are determined by the mo
 
 * [Hugging Face Pro subscription](https://huggingface.co/pricing) for 1 year or a $100 voucher for the [Hugging Face merch store](https://store.huggingface.co/)
 
-**2nd place winnner**
+**2nd place winner**
 
 * A copy of the [_NLP with Transformers_](https://transformersbook.com/) book or a $50 voucher for the [Hugging Face merch store](https://store.huggingface.co/)
 
@@ -81,9 +81,9 @@ Google Colab will be sponsoring this event by providing fee Colab Pro credits to
 
 ### What data is allowed for fine-tuning?
 
-You can use any images that belong to you or for which a permissive license allows for. If you'd like to submit a model trained on faces (e.g. as a Wilcard submission), we recommend using your own likeness. Ideally, use your own data where you can - we'd love to see your pets or favorite local landscape features, and we suspect the likes and prizes will tend to go to those who do something nice and personal 😁
+You can use any images that belong to you or for which a permissive license allows for. If you'd like to submit a model trained on faces (e.g. as a Wildcard submission), we recommend using your own likeness. Ideally, use your own data where you can - we'd love to see your pets or favorite local landscape features, and we suspect the likes and prizes will tend to go to those who do something nice and personal 😁.
 
-### Are other fine-tuning techniques like textual inversion allowed?
+### Are other fine-tuning techniques like Textual Inversion allowed?
 
-Absolutely! Although this hackathon is focused on DreamBooth, you're welcome (and encouraged) to experiment with other fine-tuning techniques. This also means you can use whatever frameworks, code, or services that help you make delightful models for the community to enjoy 🥰
+Absolutely! Although this hackathon is focused on DreamBooth, you're welcome (and encouraged) to experiment with other fine-tuning techniques. This also means you can use whatever frameworks, code, or services that help you make delightful models for the community to enjoy 🥰.
 

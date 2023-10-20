@@ -19,9 +19,9 @@ def train(
     num_epochs = 1,
     start_model = "google/ddpm-bedroom-256",
     dataset_name = "huggan/wikiart",
-    device='cuda',
-    model_save_name='wikiart_1e',
-    wandb_project='dm_finetune',
+    device = 'cuda',
+    model_save_name = 'wikiart_1e',
+    wandb_project = 'dm_finetune',
     log_samples_every = 250,
     save_model_every = 2500,
     ):
