@@ -7,11 +7,11 @@ models work and how to create your own using the 🤗 Diffusers library.
 
 Here are the steps for this unit:
 
-- Make sure you've [signed up for this course](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162) so that you can be notified when new material is released
-- Read through the introductory material below as well as any of the additional resources that sound interesting
-- Check out the _**Introduction to Diffusers**_  notebook below to put theory into practice with the 🤗 Diffusers library
-- Train and share your own diffusion model using the notebook or the linked training script
-- (Optional) Dive deeper with the _**Diffusion Models from Scratch**_ notebook if you're interested in seeing a minimal from-scratch implementation and exploring the different design decisions involved
+- Make sure you've [signed up for this course](https://huggingface.us17.list-manage.com/subscribe?u=7f57e683fa28b51bfc493d048&id=ef963b4162) so that you can be notified when new material is released.
+- Read through the introductory material below as well as any of the additional resources that sound interesting.
+- Check out the _**Introduction to Diffusers**_  notebook below to put theory into practice with the 🤗 Diffusers library.
+- Train and share your own diffusion model using the notebook or the linked training script.
+- (Optional) Dive deeper with the _**Diffusion Models from Scratch**_ notebook if you're interested in seeing a minimal from-scratch implementation and exploring the different design decisions involved.
 - (Optional) Check out [this video](https://www.youtube.com/watch?v=09o5cv6u76c) for an informal run-through the material for this unit. 
 
 
