@@ -1,0 +1,79 @@
+# Vue d'ensemble
+
+<CourseFloatingBanner
+    unit={1}
+    classNames="absolute z-10 right-0 top-0"
+/>
+
+Dans cette unité, vous apprendrez les bases de fonctionnement des modèles de diffusion et comment créer les vôtres à l'aide de la bibliothèque 🤗 *Diffusers*.
+
+## Vue d'ensemble de cette unité :rocket:
+
+Les différentes étapes à suivre pour cette unité :
+
+- Lisez le matériel d'introduction ci-dessous ainsi que toutes les ressources supplémentaires listées en bas de page qui vous sembleront intéressantes.
+- Consultez le *notebook* _**Introduction à Diffusers**_ pour mettre en pratique la théorie avec la bibliothèque 🤗 *Diffusers*.
+- Entraînez et partagez votre propre modèle de diffusion en utilisant le *notebook* ou le script d'entraînement associé.
+- (Facultatif) Approfondissez avec le *notebook* _**Implémentation à partir de 0**_ des modèles de diffusion à partir de zéro si vous souhaitez voir une implémentation minimale à partir de zéro et explorer les différentes décisions de conception en jeu.
+- (Facultatif) Regardez [cette vidéo](https://www.youtube.com/watch?v=09o5cv6u76c) (en anglais) pour une présentation informelle du matériel de cette unité. 
+
+ 
+## Que sont les modèles de diffusion ?
+
+Les modèles de diffusion sont un ajout relativement récent à un groupe d'algorithmes connus sous le nom de *modèles génératifs*. L'objectif de la modélisation générative est d'apprendre à **générer** des données, telles que des images ou des sons, à partir d'un certain nombre d'exemples d'entraînement. Un bon modèle génératif créera un ensemble **diversifié** de sorties qui ressemblent aux données d'entraînement sans être des copies exactes. Comment les modèles de diffusion y parviennent-ils ? Concentrons-nous sur le cas de la génération d'images à des fins d'illustration.
+
+<div class="flex justify-center">
+<img class="block dark:hidden" src="https://user-images.githubusercontent.com/10695622/174349667-04e9e485-793b-429a-affe-096e8199ad5b.png" alt="Figure tirée du papier DDPM de Ho et al. (2020) (https://arxiv.org/abs/2006.11239)">
+<img class="hidden dark:block" src="https://user-images.githubusercontent.com/10695622/174349667-04e9e485-793b-429a-affe-096e8199ad5b.png" alt="Figure tirée du papier DDPM de Ho et al. (2020) (https://arxiv.org/abs/2006.11239)">
+</div>
+<p align="center">
+    <em> Figure tirée du papier DDPM de Ho et al. (2020) (https://arxiv.org/abs/2006.11239). </em>
+<p>
+
+
+Le secret de la réussite des modèles de diffusion réside dans la nature itérative du processus de diffusion. La génération commence par un bruit aléatoire, mais celui-ci est progressivement affiné au cours d'un certain nombre d'étapes jusqu'à ce qu'une image de sortie émerge. À chaque étape, le modèle estime comment nous pourrions passer de l'entrée actuelle *x_t* à une version complètement débruitée *x_0*. Cependant, comme nous n'effectuons qu'un petit changement à chaque étape *t*, toute erreur dans cette estimation aux premiers stades (où il est extrêmement difficile de prédire le résultat final) peut être corrigée dans les mises à jour ultérieures. 
+
+Entraîner le modèle est relativement simple par rapport à d'autres types de modèles génératifs. Nous procédons de manière répétée
+1) Nous chargeons quelques images à partir des données d'entraînement.
+2) Nous ajoutons du bruit, en différentes quantités. N'oubliez pas que nous voulons que le modèle soit capable d'estimer comment « corriger » (débruiter) à la fois des images extrêmement bruitées et des images qui sont proches de la perfection.
+3) Nous introduisons les versions bruitées des données d'entrée dans le modèle.
+4) Nous évaluons l'efficacité du modèle à débruiter ces données d'entrée.
+5) Nous utilisons ces informations pour mettre à jour les poids du modèle.
+
+Pour générer de nouvelles images à l'aide d'un modèle entraîné, nous commençons par une entrée totalement aléatoire que nous soumettons au modèle de manière répétée, en l'actualisant à chaque fois d'une petite quantité basée sur la prédiction du modèle. Comme nous le verrons, il existe un certain nombre de méthodes d'échantillonnage qui tentent de rationaliser ce processus afin de générer de bonnes images en un minimum d'étapes.
+
+Nous montrerons chacune de ces étapes en détail dans les *notebooks* de l'unité 1. Dans l'unité 2, nous verrons comment ce processus peut être modifié pour ajouter un contrôle supplémentaire sur les résultats du modèle par le biais d'un conditionnement supplémentaire (tel qu'une étiquette de classe) ou de techniques telles que le guidage. Les unités 3 et 4 exploreront un modèle de diffusion extrêmement puissant appelé *Stable Diffusion*, qui peut générer des images à partir de descriptions textuelles.  
+
+## Notebooks
+
+A ce stade, vous en savez assez pour vous lancer dans les *notebooks* de cette unité ! Les deux *notebooks* abordent la même idée de manière différente. 
+ 
+| Chapitre                                    | Colab                                                                                                                                                                                               | Kaggle                                                                                                                                                                                                   | Gradient                                                                                                                                                                               | Studio Lab                                                                                                                                                                                                   |
+|:--------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Introduction à Diffusers                    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/fr/unit1/_introduction_to_diffusers.ipynb)              | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/huggingface/diffusion-models-class/blob/main/fr/unit1/_introduction_to_diffusers.ipynb)              | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/huggingface/diffusion-models-class/blob/main/fr/unit1/_introduction_to_diffusers.ipynb)              | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/huggingface/diffusion-models-class/blob/main/fr/unit1/_introduction_to_diffusers.ipynb)              |
+| Implémentation à partir de 0                | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/fr/unit1/_diffusion_models_from_scratch.ipynb)              | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/huggingface/diffusion-models-class/blob/main/fr/unit1/_diffusion_models_from_scratch.ipynb)              | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/huggingface/diffusion-models-class/blob/main/fr/unit1/_diffusion_models_from_scratch.ipynb)              | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/huggingface/diffusion-models-class/blob/main/fr/unit1/_diffusion_models_from_scratch.ipynb)              |
+
+
+
+Dans _**Introduction à Diffusers**_, nous montrons les différentes étapes décrites ci-dessus en utilisant les blocs de la bibliothèque 🤗 *Diffusers*. 
+Vous verrez rapidement comment créer, entraîner et échantillonner vos propres modèles de diffusion sur les données de votre choix. 
+À la fin du *notebook*, vous serez en mesure de lire et de modifier le script d'entraînement illustratif pour entraîner des modèles de diffusion et les partager avec le monde entier ! 
+Ce *notebook* introduit également l'exercice principal associé à cette unité, où nous tenterons collectivement de trouver de bonnes « recettes d'entraînement » pour les modèles de diffusion à différentes échelles (voir la section suivante pour plus d'informations).
+
+Dans _**Modèles de diffusion à partir de 0**_, nous montrons ces mêmes étapes (ajout de bruit aux données, création d'un modèle, entraînement et échantillonnage) mais implémentées à partir de zéro dans PyTorch aussi simplement que possible. 
+Nous comparons ensuite cet « exemple-jouet » avec la version de 🤗 *Diffusers*, en notant les différences entre les deux et les améliorations qui ont été apportées. 
+L'objectif est de se familiariser avec les différents composants et les décisions de conception qui les sous-tendent, afin de pouvoir identifier rapidement les idées clés pour une nouvelle implémentation.
+
+## Projet
+
+Une fois les bases assimilées grâce aux notebooks, essayez d'entraîner un ou plusieurs modèles de diffusion ! 
+Quelques suggestions sont incluses à la fin du *notebook* _**Introduction à Diffusers**_. 
+N'oubliez pas de partager vos résultats, vos recettes d'entraînement et vos découvertes avec la communauté afin que nous puissions trouver ensemble les meilleures façons d'entraîner ces modèles.
+
+## Ressources complémentaires
+Une liste non exhaustive de ressources (en anglais) à consulter :
+- [Le modèle de diffusion annoté](https://huggingface.co/blog/fr/annotated-diffusion) est une présentation très approfondie du code et de la théorie qui sous-tend les DDPM, avec des mathématiques et du code montrant tous les différents composants. Il liste également un certain nombre d'articles pour une lecture plus approfondie.  
+- La documentation d'Hugging Face sur la [Génération d'images inconditionnelle](https://huggingface.co/docs/diffusers/training/unconditional_training) contient des exemples d'entraînement de modèles de diffusion à l'aide du script d'entraînement officiel, y compris le code montrant comment créer votre propre jeu de données.  
+- La vidéo d'AI Coffee Break sur les [modèles de diffusion](https://www.youtube.com/watch?v=344w5h24-h8)  
+- La vidéo de Yannic Kilcher sur les [DDPM](https://www.youtube.com/watch?v=W-O7AZNzbzQ)  
+Vous avez identifié d'autres ressources intéressantes ? Faites-le nous savoir et nous les ajouterons à cette liste.

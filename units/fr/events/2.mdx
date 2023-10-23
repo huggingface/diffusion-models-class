@@ -1,0 +1,87 @@
+# Hackathon DreamBooth 🏆
+
+📣 **Le hackathon est maintenant terminé et les gagnants ont été annoncés sur Discord. Vous êtes toujours invités à entraîner des modèles et à les soumettre au classement, mais nous n'offrirons plus de prix ou de certificats pour le moment**.
+
+Bienvenue au Hackathon DreamBooth ! C'est un événement communautaire où vous **personnaliserez un modèle de Stable Diffusion en le finetunant sur une poignée de vos images**. Pour ce faire, vous utiliserez une technique puissante appelée [_DreamBooth_](https://arxiv.org/abs/2208.12242), qui permet d'implanter un sujet (par exemple votre animal de compagnie ou votre plat préféré) dans le domaine de sortie du modèle de sorte qu'il puisse être synthétisé avec un *unique identifiant* dans le prompt.
+
+Cette compétition est composée de 5 _thèmes_, où chacun rassemblera des modèles appartenant aux catégories suivantes :
+
+* **Animal 🐨 :** Utilisez ce thème pour générer des images de votre animal de compagnie ou de votre animal favori en train de se promener dans l'Acropole, de nager ou de voler dans l'espace.
+* **Science 🔬 :** Utilisez ce thème pour générer des images synthétiques de galaxies, de protéines ou de tout autre domaine des sciences naturelles et médicales.
+* **Nourriture 🍔 :** Utilisez ce thème pour finetuner un modèle sur votre plat ou cuisine préféré.
+* **Paysage 🏔 :** Utilisez ce thème pour créer de magnifiques paysages de votre montagne, lac ou jardin préféré.
+* **Carte blanche 🔥 :** Utilisez ce thème pour créer des modèles dans la catégorie de votre choix !
+
+Nous **attribuerons des prix aux 3 modèles les plus appréciés par thème**, et vous êtes encouragés à soumettre autant de modèles que vous le souhaitez ! 
+
+## Pour commencer
+
+Suivez les étapes ci-dessous pour participer à cet événement :
+
+1. Rejoignez le [serveur Discord d'Hugging Face](https://huggingface.co/join/discord) et consultez le canal `#dreambooth-hackathon` pour vous tenir au courant du déroulement de l'événement.
+2. Lancez et exécutez le [*notebook*](https://github.com/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb) pour entraîner vos modèles en cliquant sur l'un des liens ci-dessous. Veillez à sélectionner l'exécution sur GPU pour vous assurer que vos modèles s'entraînent rapidement !
+
+| Notebook                                    | Colab                                                                                                                                                                                               | Kaggle                                                                                                                                                                                                   | Gradient                                                                                                                                                                               | Studio Lab                                                                                                                                                                                                   |
+|:--------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Entraînement de DreamBooth                  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb)              |
+
+**Note 👋 :** Le *notebook* DreamBooth utilise le *checkpoint* [`CompVis/stable-diffusion-v1-4`](https://huggingface.co/CompVis/stable-diffusion-v1-4) comme modèle de Diffusion Stable à finetuner. Cependant, vous êtes totalement libre d'utiliser n'importe quel *checkpoint*,  il vous suffira d'ajuster le code pour charger les composants appropriés et le vérificateur de sécurité (s'il existe). Voici quelques modèles intéressants à *finetuner* :
+
+* [`runwayml/stable-diffusion-v1-5`](https://huggingface.co/runwayml/stable-diffusion-v1-5)
+* [`prompthero/openjourney`](https://huggingface.co/prompthero/openjourney)
+* [`stabilityai/stable-diffusion-2`](https://huggingface.co/stabilityai/stable-diffusion-2)
+* [`hakurei/waifu-diffusion`](https://huggingface.co/hakurei/waifu-diffusion)
+* [`stabilityai/stable-diffusion-2-1`](https://huggingface.co/stabilityai/stable-diffusion-2-1)
+* [`nitrosocke/elden-ring-diffusion`](https://huggingface.co/nitrosocke/elden-ring-diffusion)
+
+## Evaluation & Classement
+
+Pour être dans la course aux prix, poussez un ou plusieurs modèles DreamBooth sur le Hub avec le tag `dreambooth-hackathon` dans la carte du modèle ([exemple](https://huggingface.co/lewtun/ccorgi-dog/blob/main/README.md#L9)). Ce tag est créé automatiquement par le [*notebook* de DreamBooth](https://github.com/huggingface/diffusion-models-class/blob/main/hackathon/dreambooth.ipynb), mais vous devrez l'ajouter si vous exécutez vos propres scripts.
+
+Les modèles sont évalués en fonction du nombre de j'aimes et vous pouvez suivre le classement de votre modèle sur le tableau de classement du hackathon :
+
+* [Classement DreamBooth](https://huggingface.co/spaces/dreambooth-hackathon/leaderboard)
+
+## Chronologie
+
+* ** 21 décembre 2022** : Date de démarrage
+* **31 décembre 2022** : Date limite d'inscription à Colab Pro
+* ** 22 janvier 2023** : Date limite de soumission (clôture du classement)
+* ** 23-27 janvier 2023** : Annonce des gagnants de chaque thème
+
+Tous les délais sont fixés à 23h59 UTC le jour correspondant, sauf indication contraire.
+
+## Prix
+
+Nous attribuerons 3 prix par thème, **les gagnants étant déterminés par les modèles ayant le plus de j'aimes** sur le tableau de classement :
+
+**1ère place**
+
+* [Abonnement Hugging Face Pro](https://huggingface.co/pricing) pour 1 an ou un bon d'achat de 100 $ pour le [magasin de produits dérivés d'Hugging Face](https://store.huggingface.co/)
+
+**2ème place**
+
+* Une copie du livre [_NLP with Transformers_](https://transformersbook.com/) ou un bon d'achat de 50 $ pour le [magasin de produits dérivés d'Hugging Face](https://store.huggingface.co/)
+
+**3ème place**
+
+* [Abonnement Hugging Face Pro](https://huggingface.co/pricing) pour 1 mois ou un bon d'achat de 15 $ pour le [magasin de produits dérivés d'Hugging Face](https://store.huggingface.co/)
+
+Nous fournirons également un **certificat d'achèvement** à tous les participants qui soumettront au moins 1 modèle DreamBooth au hackathon 🔥.
+
+
+## Calculs
+
+Google Colab sponsorisera cet événement en offrant des crédits Colab Pro à 100 participants (sélectionnés au hasard). Les crédits seront distribués en janvier 2023 et vous avez jusqu'au 31 décembre pour vous inscrire. Pour vous inscrire, veuillez remplir [ce formulaire](https://docs.google.com/forms/d/e/1FAIpQLSeE_js5bxq_a_nFTglbZbQqjd6KNDD9r4YRg42kDFGSb5aoYQ/viewform).
+
+![](https://lh3.googleusercontent.com/-l6dUgmPOKMM/X7w3nNn3OpI/AAAAAAAALAg/74fTRiPqikMURTD_Dn4PzAVADey2_6lLwCNcBGAsYHQ/s400/colab-logo-128x128.png)
+
+## FAQ
+
+### Quelles sont les données autorisées pour le *finetuning* ?
+
+Vous pouvez utiliser toutes les images qui vous appartiennent ou pour lesquelles une licence permissive vous autorise à le faire. Si vous souhaitez soumettre un modèle entraîné sur des visages (par exemple dans le cadre d'une carte blanche), nous vous recommandons d'utiliser vos propres traits. Idéalement, utilisez vos propres données lorsque vous le pouvez - nous aimerions voir vos animaux de compagnie ou vos paysages locaux préférés, et nous soupçonnons que les j'aimes et les prix iront à ceux qui font quelque chose de gentil et de personnel 😁.
+
+### D'autres techniques de *finetuning* comme l'inversion textuelle sont-elles autorisées ?
+
+Absolument ! Bien que ce hackathon soit centré sur DreamBooth, vous êtes les bienvenus (et encouragés) à expérimenter d'autres techniques de *finetuning*. Cela signifie aussi que vous pouvez utiliser n'importe quel framework, code ou service qui vous aide à créer des modèles magnifiques pour que la communauté puisse en profiter 🥰.
