@@ -10,6 +10,7 @@
     title: What to expect from the course
   - local: unit2/01_finetuning_and_guidance
     title: What to expect from the course
+    # newlocal: unit2/finetune
   - local: unit2/02_class_conditioned_diffusion_model_example
     title: What to expect from the course
   - local: unit3/README
@@ -25,6 +26,4 @@
   - local: hackathon/README
     title: What to expect from the course
   - local: hackathon/dreambooth
-    title: What to expect from the course
-  - local: README
     title: What to expect from the course
