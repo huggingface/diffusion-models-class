@@ -1,30 +1,37 @@
 - title: Unit 0. Welcome to the course!
   sections:
   - local: unit1/README
-    newlocal: chapter1/introduction
+    newlocal: chapter1/1
     title: What to expect from the course
   - local: unit1/01_introduction_to_diffusers
+    newlocal: chapter1/2
     title: Introduction to 🤗 Diffusers
   - local: unit1/02_diffusion_models_from_scratch
+    newlocal: chapter1/3
     title: Diffusion Models from Scratch
   - local: unit2/README
-    newlocal: chapter2/introduction
+    newlocal: chapter2/1
     title: What to expect from the course
   - local: unit2/01_finetuning_and_guidance
+    newlocal: chapter2/2
     title: Fine-Tuning and Guidance
   - local: unit2/02_class_conditioned_diffusion_model_example
+    newlocal: chapter2/3
     title: Making a Class-Conditioned Diffusion Model
   - local: unit3/README
-    newlocal: chapter3/introduction
+    newlocal: chapter3/1
     title: What to expect from the course
   - local: unit3/01_stable_diffusion_introduction
+    newlocal: chapter3/2
     title: Stable Diffusion Introduction
   - local: unit4/README
-    newlocal: chapter4/introduction
+    newlocal: chapter4/1
     title: What to expect from the course
   - local: unit4/01_ddim_inversion
+    newlocal: chapter4/2
     title: DDIM Inversion
   - local: unit4/02_diffusion_for_audio
+    newlocal: chapter4/3
     title: Diffusion for Audio
   - local: hackathon/README
     newlocal: hackathon/introduction
