@@ -40,7 +40,7 @@
       newlocal: unit4/2
       title: DDIM Inversion
     - local: unit4/02_diffusion_for_audio
-      newlocal: unit4/1
+      newlocal: unit4/3
       title: Diffusion for Audio
 
 - title: Events related to the course
