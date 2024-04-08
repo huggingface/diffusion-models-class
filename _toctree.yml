@@ -3,27 +3,27 @@
   - local: unit1/README
     title: What to expect from the course
   - local: unit1/01_introduction_to_diffusers
-    title: What to expect from the course
+    title: Introduction to 🤗 Diffusers
   - local: unit1/02_diffusion_models_from_scratch
-    title: What to expect from the course
+    title: Diffusion Models from Scratch
   - local: unit2/README
     title: What to expect from the course
   - local: unit2/01_finetuning_and_guidance
-    title: What to expect from the course
+    title: Fine-Tuning and Guidance
     # newlocal: unit2/finetune
   - local: unit2/02_class_conditioned_diffusion_model_example
-    title: What to expect from the course
+    title: Making a Class-Conditioned Diffusion Model
   - local: unit3/README
     title: What to expect from the course
   - local: unit3/01_stable_diffusion_introduction
-    title: What to expect from the course
+    title: Stable Diffusion Introduction
   - local: unit4/README
     title: What to expect from the course
   - local: unit4/01_ddim_inversion
-    title: What to expect from the course
+    title: DDIM Inversion
   - local: unit4/02_diffusion_for_audio
-    title: What to expect from the course
+    title: Diffusion for Audio
   - local: hackathon/README
     title: What to expect from the course
   - local: hackathon/dreambooth
-    title: What to expect from the course
+    title: DreamBooth Hackathon 🏆
