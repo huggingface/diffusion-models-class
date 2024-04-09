@@ -1,3 +1,9 @@
+- title: Course introduction
+  sections:
+  - local: unit0/README
+    newlocal: unit0/1
+    title: Introduction
+
 - title: 1. Introduction to diffusion models
   sections:
     - local: unit1/README
