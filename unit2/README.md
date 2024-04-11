@@ -28,7 +28,7 @@ Fine-tuning typically works best if the new data somewhat resembles the base mod
 
 Unconditional models don't give much control over what is generated. We can train a conditional model (more on that in the next section) that takes additional inputs to help steer the generation process, but what if we already have a trained unconditional model we'd like to use? Enter guidance, a process by which the model predictions at each step in the generation process are evaluated against some guidance function and modified such that the final generated image is more to our liking. 
 
-![guidance example image](guidance_eg.png)
+![guidance example image](https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/diffusion-course/guidance_eg.png)
 
 This guidance function can be almost anything, making this a powerful technique! In the notebook, we build up from a simple example (controlling the color, as illustrated in the example output above) to one utilizing a powerful pre-trained model called CLIP which lets us guide generation based on a text description. 
 
@@ -36,7 +36,7 @@ This guidance function can be almost anything, making this a powerful technique!
 
 Guidance is a great way to get some additional mileage from an unconditional diffusion model, but if we have additional information (such as a class label or an image caption) available during training then we can also feed this to the model for it to use as it makes its predictions. In doing so, we create a **conditional** model, which we can control at inference time by controlling what is fed in as conditioning. The notebook shows an example of a class-conditioned model which learns to generate images according to a class label. 
 
-![conditioning example](conditional_digit_generation.png)
+![conditioning example](https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/diffusion-course/conditional_digit_generation.png)
 
 There are a number of ways to pass in this conditioning information, such as
 - Feeding it in as additional channels in the input to the UNet. This is often used when the conditioning information is the same shape as the image, such as a segmentation mask, a depth map or a blurry version of the image (in the case of a restoration/superresolution model). It does work for other types of conditioning too. For example, in the notebook, the class label is mapped to an embedding and then expanded to be the same width and height as the input image so that it can be fed in as additional channels.
