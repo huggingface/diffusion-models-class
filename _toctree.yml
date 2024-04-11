@@ -5,6 +5,7 @@
     title: Introduction
 
 - title: 1. Introduction to diffusion models
+  isExpanded: true
   sections:
     - local: unit1/README
       newlocal: unit1/1
@@ -17,6 +18,7 @@
       title:  Diffusion Models from Scratch
 
 - title: 2. Fine-Tuning, Guidance and Conditioning
+  isExpanded: true
   sections:
     - local: unit2/README
       newlocal: unit2/1
@@ -29,6 +31,7 @@
       title: Making a Class-Conditioned Diffusion Model
 
 - title: 3. Stable Diffusion
+  isExpanded: true
   sections:
     - local: unit3/README
       newlocal: unit3/1
@@ -38,6 +41,7 @@
       title: Stable Diffusion Introduction
 
 - title: 4. Going Further with Diffusion Models
+  isExpanded: true
   sections:
     - local: unit4/README
       newlocal: unit4/1
@@ -50,6 +54,7 @@
       title: Diffusion for Audio
 
 - title: Events related to the course
+  isExpanded: true
   sections:
     - local: hackathon/README
       newlocal: hackathon/introduction
