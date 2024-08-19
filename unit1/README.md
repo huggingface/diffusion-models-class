@@ -3,7 +3,7 @@
 Welcome to Unit 1 of the Hugging Face Diffusion Models Course! In this unit, you will learn the basics of how diffusion 
 models work and how to create your own using the 🤗 Diffusers library.
 
-## Start this Unit :rocket:
+## Start this Unit 🚀
 
 Here are the steps for this unit:
 
