@@ -15,7 +15,7 @@ Here are the steps for this unit:
 - (Optional) Check out [this video](https://www.youtube.com/watch?v=09o5cv6u76c) for an informal run-through the material for this unit. 
 
 
-:loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
+📢 Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
  
 ## What Are Diffusion Models?
 
