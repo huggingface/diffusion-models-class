@@ -2,7 +2,7 @@
 
 Welcome to Unit 4 of the Hugging Face Diffusion Models Course! In this unit, we will look at some of the many improvements and extensions to diffusion models appearing in the latest research. It will be less code-heavy than previous units have been and is designed to give you a jumping-off point for further research.
 
-## Start this Unit :rocket:
+## Start this Unit 🚀
 
 Here are the steps for this unit:
 
@@ -11,12 +11,12 @@ Here are the steps for this unit:
 - Dive deeper into any specific topics with the linked videos and resources.
 - Explore the demo notebooks and then read the 'What Next' section for some project suggestions.
 
-:loudspeaker: Don't forget to join [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
+📢 Don't forget to join [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
 
 ## Table of Contents
 
 - [Unit 4: Going Further with Diffusion Models](#unit-4-going-further-with-diffusion-models)
-  - [Start this Unit :rocket:](#start-this-unit-rocket)
+  - [Start this Unit 🚀](#start-this-unit-rocket)
   - [Table of Contents](#table-of-contents)
   - [Faster Sampling via Distillation](#faster-sampling-via-distillation)
   - [Training Improvements](#training-improvements)
