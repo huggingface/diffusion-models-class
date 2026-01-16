@@ -2,7 +2,7 @@
 
 Welcome to Unit 2 of the Hugging Face Diffusion Models Course! In this unit, you will learn how to use and adapt pre-trained diffusion models in new ways. You will also see how we can create diffusion models that take additional inputs as **conditioning** to control the generation process.
 
-## Start this Unit :rocket:
+## Start this Unit 🚀
 
 Here are the steps for this unit:
 
@@ -14,7 +14,7 @@ Here are the steps for this unit:
 - (Optional) Check out [this video](https://www.youtube.com/watch?v=mY20iKOQ2zw) for an informal run-through of the material in this unit.
 
 
-:loudspeaker: Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
+📢 Don't forget to join the [Discord](https://huggingface.co/join/discord), where you can discuss the material and share what you've made in the `#diffusion-models-class` channel.
  
 ## Fine-Tuning
 
