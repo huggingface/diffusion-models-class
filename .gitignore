@@ -6,6 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
+mnist/
 # Distribution / packaging
 .Python
 build/
