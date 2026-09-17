@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request'
     uses: huggingface/doc-builder/.github/workflows/upload_pr_documentation.yml@17ccdf17e0f5e5f88b1ce9f20b3b73fb19017169  # main
     with:
       package_name: diffusion-course
